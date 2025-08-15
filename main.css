@@ -26,6 +26,7 @@
 
     --link-color: var(--tertiary-light);
     --link-active-color: var(--tertiary-lighter);
+    --link-background: var(--secondary-dark);
 }
 
 body {
@@ -40,18 +41,26 @@ h1 {
 
 nav {
     padding: 0.2em 1em;
-    background-color: var(--secondary-dark);
-
     ul {
-        margin-left: -0.5em;
-        list-style-position: outside;
-
-        ::marker {
-            content: "⎆ ";
-            color: var(--link-active-color);
+        margin-inline-start: -0.5em;
+        list-style-position: inside;
+        li {
+            padding: 1em;
+            background-color: var(--link-background);
+            &::marker {
+                color: var(--link-active-color);
+                content: "⎆ ";
+                font-size: 1.2em;
+            }
+            /* &:has(a:hover) {
+                background-color: var(--link-color);
+            } */
+            /* &:has(a:hover)::marker {
+                text-shadow: 0 0 0.1em var(--link-active-color);
+            } */
         }
-    }
 
+    }
     a {
         text-transform: uppercase;
         &:hover {
@@ -67,13 +76,12 @@ a {
     text-decoration: none;
     transition: color 0.2s ease-in-out, text-shadow 0.1s ease-in;
     font-weight: bold;
-
     &:link,
     &:visited {
-        color: var(--tertiary-light)
+        color: var(--link-color)
     }
     &:hover {
-        color: var(--tertiary-lighter);
+        color: var(--link-active-color);
     }
 }
 
@@ -86,7 +94,6 @@ p {
     text-align: justify;
     text-indent: 2em;
     margin-block-end: 0;
-
     &+p {
         margin-block-start: 0.2em;
     }
@@ -119,15 +126,5 @@ figure {
         text-align: center;
         font-size: smaller;
         background-color: var(--primary-lighter);
-    }
-}
-
-span.attribution-license {
-    img.creative-commons {
-        display: inline;
-        width: 1em;
-        height: 1em;
-        position: relative;
-        top: 0.2em;
     }
 }
