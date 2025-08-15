@@ -39,39 +39,6 @@ h1 {
     text-align: center;
 }
 
-nav {
-    padding: 0.2em 1em;
-    ul {
-        margin-inline-start: -0.5em;
-        list-style-position: inside;
-        li {
-            padding: 1em;
-            background-color: var(--link-background);
-            &::marker {
-                color: var(--link-active-color);
-                content: "⎆ ";
-                font-size: 1.2em;
-            }
-            /* &:has(a:hover) {
-                background-color: var(--link-color);
-            } */
-            /* &:has(a:hover)::marker {
-                text-shadow: 0 0 0.1em var(--link-active-color);
-            } */
-        }
-
-    }
-    a {
-        text-transform: uppercase;
-        &:hover {
-            text-shadow: 0 0 0.1em var(--link-active-color);
-        }
-        &:active {
-            text-shadow: 0 0 0.6em var(--link-active-color);
-        }
-    }
-}
-
 a {
     text-decoration: none;
     transition: color 0.2s ease-in-out, text-shadow 0.1s ease-in;

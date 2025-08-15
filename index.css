@@ -4,13 +4,105 @@
     left: 0%;
     z-index: -100;
     max-width: 100%;
+
+    img {
+        filter: opacity(30%) grayscale(70%);
+        clip-path: polygon(10% 0, 70% 10%, 90% 90%, 35% 80%);
+        position: relative;
+        left: -10%;
+        width: 100%;
+    }
 }
 
-.background-character img {
-    filter: opacity(30%) grayscale(70%);
-    clip-path: polygon(10% 0, 70% 10%, 90% 90%, 35% 80%);
-    position: relative;
-    left: -10%;
-    width: 100%;
-}
+.foreground-character {
+    pointer-events: none;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    z-index: 100;
+    max-width: 100%;
     
+    svg.shard {
+        width: 30rem;
+        height: 30rem;
+        transform: rotate(-90deg);
+        
+        polygon {
+            filter: drop-shadow(-1px 1px 1px var(--tertiary-darker)) opacity(0.1);
+            fill: var(--tertiary-lighter);
+        }
+    }
+}
+
+nav {
+    padding: 0 1em;
+    @media (max-width: 600px) {
+        padding: 0;
+    }
+    ul {
+        list-style-position: inside;
+        @media (max-width: 600px) {
+            padding-inline-start: 0;
+        }
+        li {
+            padding: 1em;
+            @media (max-width: 600px) {
+                padding: 1em 0.5em;
+            }
+            background-color: var(--link-background);
+            &::marker {
+                color: var(--link-active-color);
+                content: "⎆ ";
+                font-size: 1.2em;
+            }
+        }
+    }
+    a {
+        text-transform: uppercase;
+        &:hover {
+            text-shadow: 0 0 0.1em var(--link-active-color);
+        }
+        &:active {
+            text-shadow: 0 0 0.6em var(--link-active-color);
+        }
+    }
+}
+
+/* @keyframes full-rotation-cw {
+    from {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg); 
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes full-rotation-acw {
+    from {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-90deg);
+    }
+
+    50% {
+        transform: rotate(-180deg);
+    }
+
+    75% {
+        transform: rotate(-270deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+} */
