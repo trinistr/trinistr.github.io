@@ -22,7 +22,10 @@
     --complement-darker: #010929;
 
     --font-color: var(--complement-darker);
-    --background-color: var(--primary-lighter)
+    --background-color: var(--primary-lighter);
+
+    --link-color: var(--tertiary-light);
+    --link-active-color: var(--tertiary-lighter);
 }
 
 body {
@@ -45,26 +48,32 @@ nav {
 
         ::marker {
             content: "⎆ ";
-            color: var(--tertiary-lighter);
+            color: var(--link-active-color);
         }
     }
 
     a {
-        text-decoration: none;
         text-transform: uppercase;
-        transition: color 0.2s ease-in-out, text-shadow 0.1s ease-in;
-        font-weight: bold;
-
-        &:link, &:visited {
-            color: var(--tertiary-light)
-        }
         &:hover {
-            color: var(--tertiary-lighter);
-            text-shadow: 0 0 0.1em var(--tertiary-lighter);
+            text-shadow: 0 0 0.1em var(--link-active-color);
         }
         &:active {
-            text-shadow: 0 0 0.6em var(--tertiary-lighter);
+            text-shadow: 0 0 0.6em var(--link-active-color);
         }
+    }
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, text-shadow 0.1s ease-in;
+    font-weight: bold;
+
+    &:link,
+    &:visited {
+        color: var(--tertiary-light)
+    }
+    &:hover {
+        color: var(--tertiary-lighter);
     }
 }
 
@@ -84,13 +93,41 @@ p {
 }
 
 pre {
-    margin-left: -1em;
-    padding-left: 1em;
-    border-left: 0.5em solid var(--tertiary);
+    margin-inline-start: -1em;
+    padding-inline-start: 1em;
+    border-inline-start: 0.5em solid var(--tertiary);
     background-color: rgb(255, 255, 255, 0.1);
 }
 
 code {
     font-family: 'Fira Code', monospace;
     font-size: smaller;
+}
+
+figure {
+    max-width: 100%;
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    border-style: ridge;
+    border-width: 0.5em;
+    border-color: var(--complement-light);
+
+    figcaption {
+        padding: 0.2em;
+        text-align: center;
+        font-size: smaller;
+        background-color: var(--primary-lighter);
+    }
+}
+
+span.attribution-license {
+    img.creative-commons {
+        display: inline;
+        width: 1em;
+        height: 1em;
+        position: relative;
+        top: 0.2em;
+    }
 }
