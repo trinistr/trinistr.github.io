@@ -34,40 +34,6 @@
     }
 }
 
-nav {
-    padding: 0 1em;
-    @media (max-width: 600px) {
-        padding: 0;
-    }
-    ul {
-        list-style-position: inside;
-        @media (max-width: 600px) {
-            padding-inline-start: 0;
-        }
-        li {
-            padding: 1em;
-            @media (max-width: 600px) {
-                padding: 1em 0.5em;
-            }
-            background-color: var(--link-background);
-            &::marker {
-                color: var(--link-active-color);
-                content: "⎆ ";
-                font-size: 1.2em;
-            }
-        }
-    }
-    a {
-        text-transform: uppercase;
-        &:hover {
-            text-shadow: 0 0 0.1em var(--link-active-color);
-        }
-        &:active {
-            text-shadow: 0 0 0.6em var(--link-active-color);
-        }
-    }
-}
-
 /* @keyframes full-rotation-cw {
     from {
         transform: rotate(0deg);
