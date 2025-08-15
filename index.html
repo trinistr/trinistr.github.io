@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locatio Terriblis: A personal story</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
-        integrity="sha384-4aMEnBa9HzMLsDYaLm5wiA2ZoWDqNSB6pNnINMFUt13g9VOuTY5hZC49pzHzRXVs" crossorigin="anonymous">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
+        integrity="sha384-4aMEnBa9HzMLsDYaLm5wiA2ZoWDqNSB6pNnINMFUt13g9VOuTY5hZC49pzHzRXVs" crossorigin="anonymous"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
+            integrity="sha384-4aMEnBa9HzMLsDYaLm5wiA2ZoWDqNSB6pNnINMFUt13g9VOuTY5hZC49pzHzRXVs" crossorigin="anonymous">
+    </noscript>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -14,6 +19,11 @@
 <body>
     <div class="background-character">
         <img src="vapor.jpg" alt="">
+    </div>
+    <div class="foreground-character">
+        <svg class="shard" viewBox="-20 -20 140 140" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <polygon points="0,0 100,60 60,90 20,80"/>
+        </svg>
     </div>
     <main>
         <h1>A small introduction to v⌾id</h1>
