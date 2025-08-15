@@ -1,0 +1,96 @@
+:root {
+    /* https://paletton.com/#uid=4120N0kymrngCCipKvQFvkQQEcW */
+    --primary: #da9900;
+    --primary-light: #ffc53d;
+    --primary-lighter: #ffe29d;
+    --primary-dark: #996b00;
+    --primary-darker: #3d2b00;
+    --secondary: #5a0892;
+    --secondary-light: #7c32ae;
+    --secondary-lighter: #b487d3;
+    --secondary-dark: #3f0467;
+    --secondary-darker: #190029;
+    --tertiary: #009459;
+    --tertiary-light: #2ab17a;
+    --tertiary-lighter: #83d4b3;
+    --tertiary-dark: #00683e;
+    --tertiary-darker: #002a19;
+    --complement: #112a94;
+    --complement-light: #3a52b1;
+    --complement-lighter: #8d9bd4;
+    --complement-dark: #081b68;
+    --complement-darker: #010929;
+
+    --font-color: var(--complement-darker);
+    --background-color: var(--primary-lighter)
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-size: 1.2em;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    padding: 0.2em 1em;
+    background-color: var(--secondary-dark);
+
+    ul {
+        margin-left: -0.5em;
+        list-style-position: outside;
+
+        ::marker {
+            content: "⎆ ";
+            color: var(--tertiary-lighter);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.2s ease-in-out, text-shadow 0.1s ease-in;
+        font-weight: bold;
+
+        &:link, &:visited {
+            color: var(--tertiary-light)
+        }
+        &:hover {
+            color: var(--tertiary-lighter);
+            text-shadow: 0 0 0.1em var(--tertiary-lighter);
+        }
+        &:active {
+            text-shadow: 0 0 0.6em var(--tertiary-lighter);
+        }
+    }
+}
+
+main {
+    max-width: 50rem;
+    margin: auto;
+}
+
+p {
+    text-align: justify;
+    text-indent: 2em;
+    margin-block-end: 0;
+
+    &+p {
+        margin-block-start: 0.2em;
+    }
+}
+
+pre {
+    margin-left: -1em;
+    padding-left: 1em;
+    border-left: 0.5em solid var(--tertiary);
+    background-color: rgb(255, 255, 255, 0.1);
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    font-size: smaller;
+}
