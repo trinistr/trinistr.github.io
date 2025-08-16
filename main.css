@@ -69,6 +69,7 @@ nav {
 
     ul {
         list-style: none;
+        padding-inline-start: 0;
 
         li > a {
             display: block;
@@ -119,6 +120,7 @@ nav {
 
         li > a {
             padding: 0.5em 1em;
+            text-align: center;
         }
     }
 }
