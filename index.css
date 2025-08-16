@@ -17,58 +17,22 @@
 .foreground-character {
     pointer-events: none;
     position: absolute;
-    top: 10%;
-    right: 20%;
+    top: 10vh;
+    right: 10vw;
     z-index: 100;
     max-width: 100%;
+    @media (max-width: 767px) {
+        right: 0
+    }
     
     svg.shard {
-        width: 30rem;
-        height: 30rem;
-        transform: rotate(-90deg);
+        width: 40vw;
+        min-width: 20rem;
+        height: 40vh;
         
         polygon {
-            filter: drop-shadow(-1px 1px 1px var(--tertiary-darker)) opacity(0.1);
+            filter: drop-shadow(1px 1px 1px var(--tertiary-darker)) opacity(0.1);
             fill: var(--tertiary-lighter);
         }
     }
 }
-
-/* @keyframes full-rotation-cw {
-    from {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(90deg); 
-    }
-    50% {
-        transform: rotate(180deg);
-    }
-    75% {
-        transform: rotate(270deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-@keyframes full-rotation-acw {
-    from {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-90deg);
-    }
-
-    50% {
-        transform: rotate(-180deg);
-    }
-
-    75% {
-        transform: rotate(-270deg);
-    }
-
-    to {
-        transform: rotate(-360deg);
-    }
-} */
