@@ -120,6 +120,7 @@ a {
 
     @media print {
         &[href]::after {
+            text-transform: none;
             content: " (" attr(href) ")";
         }
     }
@@ -133,12 +134,6 @@ nav {
     ul {
         list-style: none;
         padding-inline-start: 0;
-
-        li {
-            @media not (hover) {
-                margin-block-start: 0.5em;
-            }
-        }
 
         a {
             display: block;
@@ -161,7 +156,7 @@ nav {
             }
 
             @media print {
-                &::after {
+                &[href]::after {
                     /* Remove href from printing as there is no point in showing it for internal navigation. */
                     content: normal;
                 }
@@ -333,6 +328,12 @@ article > figure {
         top: 0.2em;
         margin-inline-end: 0.2em;
         content: "";
+
+        @media print {
+            display: hidden;
+            background-image: none;
+            content: none;
+        }
     }
 }
 
