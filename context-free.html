@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Free — Locatio Terriblis</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav class="backlink">
+        <ul>
+            <li><a href="/">Back to 📒</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Context Free — ars ex machina</h1>
+        <div class="original-reference">
+            🎑 <a href="https://www.contextfreeart.org">Home of Context Free</a>
+        </div>
+        <section>
+            <h2>Machina</h2>
+            <div>
+                <blockquote>
+                    Context Free is a program that generates images from written instructions called a grammar. The program follows the instructions in a few seconds to create images that can contain millions of shapes.
+                </blockquote>
+                <div class="quote-source">
+                    <cite>The Context Free Art website</cite>
+                </div>
+            </div>
+            <p>
+                <b><abbr>CFDG</abbr></b> (Context Free Design Grammar) is language for describing a context-free grammar, unsurprisingly. Unlike the usual, however, it is not used to prescribe a grammar and parse a given source text, but to be recursively applied to reify the "grammar" into an image. <b>Context Free</b>, on the other hand, is a tool that implements that transformation, allowing hours to pass by as a perfect (or not) image emerges from simple, but structured, text.
+            </p>
+            <p>
+                What makes CFDG and Context Free really tubular is infinite recursion: the ability to apply rules inside the same rules inside the same rules inside the same rules. Until the details become so small that they no longer can be drawn. Or until the specified size. Maybe until they are no longer in-bounds. Because, in the end, it's the user who is in control of the generation.
+            </p>
+            <p>
+                Now, seeing is believeing or something like that, so let's just jump into it with a small example:
+            </p>
+            <div class="file">
+                <span class="filename"><a href="context-free/triangle.cfdg">triangle.cfdg</a></span>
+                <pre><code data-lang="cfdg"><span class="comment">// Make the background transparent</span>
+CF::Background = [alpha -1]
+<span class="comment">// Set the starting shape (required before version 3.4),
+// and set the desired color in HSB</span>
+startshape triangle [hue 227.9 saturation 0.5064 brightness 0.4608]
+<span class="comment">// Define the shape rule</span>
+shape triangle {
+    ▲ [] <span class="comment">// Boring "TRIANGLE []" can be used, too</span>
+    triangle [size 0.87 rotate 5 brightness -0.1] <span class="comment">// Recurse</span>
+}</code></pre>
+            </div>
+            <p>
+                Now, by default <b>Context Free</b> adds some borders to the generated image. This makes sense, yes. However, this concrete file uses only a single unit-sized shaped at most (all primitives have a size of 1 unit), so borders would be gigantic. Not only that, but default positioning is also off, so cropping needs to be done. And, of course, we want a nice vector image to be served on the internet, so SVG makes more sense. So, let's generate the image with <code data-lang="sh"><kbd>cfdg --crop --bordersize=0 --svg triangle.cfdg triangle.svg</kbd></code> and see this beauty. <b>Context Free</b> on Windows and macOS probably have a graphical interface to do this. I wouldn't know.
+            </p>
+            <figure>
+                <img src="context-free/triangle.svg"
+                    alt="A triangle inside a triangle inside a triangle inside a triangle inside a …">
+                <figcaption>
+                    Rotationing darkening triangular thingy. Dedicated to public domain <span class="license">(<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>)</span>, if you are so inclined to take this useless image and use it anyway.
+                </figcaption>
+            </figure>
+            <p>
+                Well, that's a <i>dapper</i> triangle! But it <i>is</i> quite blocky. If a smoother gradient is desired, adjustments in recursive <code data-lang="cfdg">triangle</code> calls can be made. For example, <code data-lang="cfdg">triangle [size 0.97 rotate 1 brightness -0.03]</code> makes almost the same shape, but the gradient becomes hard to notice (even if not actually completely smooth). This is achieved by <b>Context Free</b> generating significantly more shapes through the recursion, making the resulting SVG file ≈4 times larger and increasing the number of drawn shapes: going from 54 to 244.
+            </p>
+            <p>
+                Now, for something more interesting, how about randomness? <b>Context Free</b> allows for a few different ways to randomize things, such as choosing one shape out of a set, looping a random number of times, or using randomized values for adjustments. Let's look at a garden:
+            </p>
+            <div class="file">
+                <span class="filename"><a href="context-free/garden.cfdg">garden.cfdg</a> (excerpts)</span>
+                <pre><code data-lang="cfdg">shape GARDEN {
+    <span class="comment">// Generate random number of plants at random positions</span>
+    loop 4…10 [x 1…5] {
+        GROUND [z -10]
+        transform [y -5…-3.5] {
+            PLANT []
+        }
+    }
+}
+...
+            <span class="comment">// Possible flower</span>
+            if (randint(3) == 0) {
+                FLOWER [y 1 z 1]
+            }
+...
+shape FLOWER
+rule 50% {
+    loop 6 [r 60] PETAL []
+    CIRCLE [s 0.5 b 1 h 60 sat 0.3]
+}
+rule {
+    <span class="comment">// Bud</span>
+    CIRCLE [s 0.5 0.3 y -0.9 b 0.6 h 120 sat 0.5]
+    PETAL [s 1.1 y -1]
+    PETAL [x 0.2 y -1 r 10]
+    PETAL [x -0.2 y -1 r -10]
+    SEPAL [s 1 x 0.1 y -1 r -20]
+    SEPAL [s 1 x -0.1 y -1 r 20]
+}
+                </code></pre>
+            </div>
+            <figure>
+                <img src="context-free/garden.svg" alt="A bunch of questionably-drawn plants with stems, leaves and flowers">
+                <figcaption>
+                    <cite>Garden</cite>
+                    by <a href="/">me myself</a>
+                    <span class="license">
+                        (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>)
+                    </span>
+                </figcaption>
+            </figure>
+            <p>
+                Neat, wouldn't you say? This is just a taste of what <b>Context Free</b> can do. People have used <b>CFDG</b> to create all sorts of images, from abstract patterns and fractals to fairly detailed painstakingly-crafted pictures. Of course, it's mostly simple things, but with enough time and effort really crazy stuff can be done too.
+            </p>
+        </section>
+        <section>
+            <h2>Ars</h2>
+            <div class="gallery">
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/c6/f0/c6f0693fb38025bd1bebe941954a08b6//thumb_4284.png?1"
+                            alt="Happy little fractal bugs">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=4284">context free eggbug</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=jix">jix</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/48/c2/48c270d2ed3f7e92594298c051b94b28//thumb_4243.jpg?1"
+                            alt="Colorful shapes based on intersecting ellipses">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=4243">Circle Map</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=flembobs">flembobs</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/a0/3e/a03ef079efb3bf8e7bae1b2c75bd020f//thumb_4213.jpg?1"
+                            alt="Binary tree drawn as a negative 3D shape">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=4213">negativatree</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=kipling">kipling</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/a0/3e/a03ef079efb3bf8e7bae1b2c75bd020f//thumb_3959.jpg?1"
+                            alt="A photograph-like image of something resembling random crystal formation (in pink)">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=3959">wisp</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=kipling">kipling</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-sa/2.5/au/">CC BY-SA 2.5 AU</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/7a/59/7a598fa290a056e9f09e7a29c2c90e7e/thumb_4119.png?1"
+                            alt="A noisy ring on a backdrop of noisy squares">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=4119">Ring</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=thohTu0u">thohTu0u</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/81/0d/810d02128464264536b6e3b71bff7332/thumb_4110.png?1"
+                            alt="A mess of colored stringy objects piled on each other spread through the image">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=4110">jens Revisited</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=thijs">thijs</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/45/75/45757b6865c640c253772d52b50ac308//thumb_4099.png?1"
+                            alt="Brightly colored squares intersecting with concentric circles, creating even more bright colors">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=4099">Depero Moon</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=mycelium">mycelium</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/9b/f8/9bf858568cbc659b09ac70a07bc11122//thumb_4036.jpg?1"
+                            alt="Swirling spiral, half bright, half dark, slowly changing color to the center">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=4036">beam</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=esn">esn</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/d7/6a/d76a0624b1c4789acf64e899a4d79fe7/thumb_3953.png?1"
+                            alt="A realistically-shaped, but unrealistically colored tree">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=3953">Colored Shaded Tree</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=ColorMeImpressed">ColorMeImpressed</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/b5/c5/b5c57863e51f2da25307c6ddd00329d0//thumb_3819.jpg?1"
+                            alt="Concentric colorful cubic splines">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=3819">Cubic Spline</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=whatcode">whatcode</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/a0/3e/a03ef079efb3bf8e7bae1b2c75bd020f//thumb_3781.jpg?1"
+                            alt="Craggy mountains fading into the horizon under a purple sky">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=3781">crags</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=kipling">kipling</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-sa/2.5/au/">CC BY-SA 2.5 AU</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/38/2e/382edf37cbaedf2029912f6bb7254034//thumb_3778.png?1"
+                            alt="Star system chart with undecipherable labels pointing to planets">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=3778">navigation-map</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=mikelovesrobots">mikelovesrobots</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0 US</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/38/2e/382edf37cbaedf2029912f6bb7254034//thumb_3754.png?3"
+                            alt="50 frames of stick figures doing incomprehensible actions">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=3754">A story in 50 frames</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=mikelovesrobots">mikelovesrobots</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+                <article>
+                    <figure>
+                        <img src="https://www.contextfreeart.org/gallery/uploads/eb/3c/eb3cb400569aac02163a81c940c575ef//thumb_3765.png?1"
+                            alt="A bald man in a suit, drawn in unnatural colors">
+                        <figcaption>
+                            <cite><a href="https://www.contextfreeart.org/gallery/view.php?id=3765">Good luck, Barack !</a></cite>
+                            by <a href="https://www.contextfreeart.org/gallery/search.php?by=DeFleur">DeFleur</a>
+                            <span class="license">
+                                (<a href="https://creativecommons.org/licenses/by-nc-sa/2.5/ch/">CC BY-NC-SA 2.5 CH</a>)
+                            </span>
+                        </figcaption>
+                    </figure>
+                </article>
+            </div>
+            <hr>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.contextfreeart.org/gallery/index.php">Explore the Context Free gallery</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+</body>
