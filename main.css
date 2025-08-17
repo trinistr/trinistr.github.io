@@ -24,9 +24,13 @@
     --complement-dark: #081b68;
     --complement-darker: #010929;
 
+    --standout-color: var(--tertiary);
+    --standout-alt-color: var(--secondary);
+
     --font-color: var(--complement-darker);
     --font-emph-color: var(--secondary-darker);
     --background-color: var(--primary-lighter);
+    --background-special-color: hsl(from var(--background-color) h s 90%);
     --font-alt-color: var(--complement-lighter);
     --font-alt-emph-color: var(--secondary-lighter);
     --background-alt-color: var(--primary-darker);
@@ -35,6 +39,29 @@
     --link-background: var(--secondary-dark);
     --link-active-color: var(--tertiary-lighter);
     --link-active-background: var(--secondary);
+
+    --border-color: var(--complement-light);
+    --shadow-color: var(--complement-darker);
+    --border-standout-color: var(--tertiary);
+
+    @media (prefers-color-scheme: dark) {
+        --font-color: var(--primary-lighter);
+        --font-emph-color: var(--secondary-lighter);
+        --background-color: var(--complement-darker);
+        --background-special-color: hsl(from var(--background-color) h s 10%);
+        --font-alt-color: var(--complement-lighter);
+        --font-alt-emph-color: var(--secondary-lighter);
+        --background-alt-color: var(--primary-darker);
+    
+        --link-color: var(--tertiary-light);
+        --link-background: var(--secondary-dark);
+        --link-active-color: var(--tertiary-lighter);
+        --link-active-background: var(--secondary);
+    
+        --border-color: var(--complement-light);
+        --shadow-color: var(--complement-darker);
+        --border-standout-color: var(--tertiary);
+    }
 }
 
 * {
@@ -113,7 +140,7 @@ nav {
             }
         }
 
-        li > a {
+        a {
             display: block;
             padding: 1em;
 
@@ -161,19 +188,19 @@ nav {
             display: none;
         }
 
-        li > a {
+        a {
             padding: 0.5em 1em;
             text-align: center;
         }
     }
 }
 
-/* Code */
+/* Files and code */
 
 .file {
     margin-block: 0.5em;
     margin-inline-end: auto;
-    border-inline-start: 0.5em solid var(--tertiary);
+    border-inline-start: 0.5em solid var(--border-standout-color);
     padding-inline-start: 1em;
     background-color: var(--background-alt-color);
     font-family: 'Linux Libertine';
@@ -206,7 +233,7 @@ pre {
     margin-inline-start: -1em;
     padding-block: 0.2em;
     padding-inline-start: 1em;
-    background-color: hsl(from var(--background-color) h s 90%);
+    background-color: var(--background-special-color);
     overflow-x: auto;
     tab-size: 4;
     /* Prevent font size from being different (affects em). */
@@ -221,7 +248,7 @@ code {
     font-size: 0.8em;
 
     .comment {
-        color: var(--complement-light);
+        color: var(--font-alt-color);
     }
 
     &[data-lang="sh"] {
@@ -254,18 +281,18 @@ figure {
         margin: auto;
         border-style: ridge;
         border-width: 0.5em;
-        border-color: var(--complement-light);
+        border-color: var(--border-color);
         background-color: var(--background-color);
-        filter: drop-shadow(0em 0.2em 0.2em var(--complement-darker));
+        filter: drop-shadow(0em 0.2em 0.2em var(--shadow-color));
     }
 
     figcaption {
         margin-block-start: 0.1em;
-        border: 0.1em solid var(--complement-darker);
+        border: 0.1em solid var(--border-color);
         padding: 0.2em;
         text-align: center;
-        background-color: var(--primary-lighter);
-        filter: drop-shadow(0em 0.05em 0.05em var(--complement-darker));
+        background-color: var(--background-color);
+        filter: drop-shadow(0em 0.05em 0.05em var(--shadow-color));
     }
 }
 article > figure {
@@ -312,14 +339,14 @@ article > figure {
 /* Quotes */
 
 div:has(> blockquote) {
-    margin-block: 0.2em;
+    margin-block: 0.5em;
     margin-inline: 1em;
     border-left-style: ridge;
     border-left-width: 0.4em;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
-    border-color: var(--complement-light);
-    padding: 0.8em;
+    border-color: var(--border-color);
+    padding: 0.5em 1em;
 
     &:has(> .quote-source) {
         padding-block-end: 0;
@@ -341,7 +368,7 @@ div:has(> blockquote) {
             width: 50%;
             margin-inline-start: auto;
             border-bottom-style: solid;
-            border-color: var(--complement-light);
+            border-color: var(--border-color);
             content: "";
         }
     }

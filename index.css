@@ -17,7 +17,7 @@
 .foreground-character {
     pointer-events: none;
     position: absolute;
-    top: 10vh;
+    top: 5vh;
     right: 10vw;
     z-index: 100;
     max-width: 100%;
