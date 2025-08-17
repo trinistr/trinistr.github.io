@@ -81,13 +81,14 @@ body {
 .page-wrapper {
     display: flex;
     flex-direction: column;
-    height: calc(100lvh);
+    height: 100lvh;
 }
 
 main {
     flex: 1;
-    max-width: 50rem;
+    max-width: min(50rem, 100vw);
     margin: auto;
+    padding-inline: 8px;
 }
 
 .page-wrapper > footer {
