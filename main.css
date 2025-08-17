@@ -318,7 +318,7 @@ article > figure {
 
     a[href^="https://creativecommons.org/licenses/"]::before,
     a[href^="https://creativecommons.org/publicdomain/"]::before {
-        background-image: url(cc.svg);
+        background-image: url(/cc.svg);
         background-size: contain;
         background-repeat: no-repeat;
         display: inline-block;
