@@ -68,11 +68,39 @@
     box-sizing: border-box;
 }
 
+/* Layout */
+
 body {
+    margin: 0;
     background-color: var(--background-color);
     color: var(--font-color);
     font-size: 1.2em;
 }
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100lvh);
+}
+
+main {
+    flex: 1;
+    max-width: 50rem;
+    margin: auto;
+}
+
+.page-wrapper > footer {
+    width: 100%;
+    margin-block-start: 1em;
+    border-block-start: 0.1em solid var(--border-color);
+    padding: 1em;
+    color: var(--font-emph-color);
+    background-color: var(--background-special-color);
+    text-align: center;
+    font-size: smaller;
+}
+
+/* Base styling */
 
 h1 {
     text-align: center;
@@ -80,11 +108,6 @@ h1 {
 
 h2 {
     text-align: center;
-}
-
-main {
-    max-width: 50rem;
-    margin: auto;
 }
 
 p {
@@ -134,47 +157,51 @@ nav {
     ul {
         list-style: none;
         padding-inline-start: 0;
+    }
 
-        a {
-            display: block;
-            padding: 1em;
-
-            @media (max-width: 767px) {
-                padding: 1em 0.5em;
+    a {
+        display: block;
+        padding: 1em;
+    
+        @media (max-width: 767px) {
+            padding: 1em 0.5em;
+        }
+    
+        background-color: var(--link-background);
+        border: 1px solid var(--link-background);
+        text-transform: uppercase;
+    
+        &::before {
+            display: inline-block;
+            margin-inline-end: 0.2em;
+            color: inherit;
+            font-weight: normal;
+            content: "⎆";
+        }
+    
+        @media print {
+            &[href]::after {
+                /* Remove href from printing as there is no point in showing it for internal navigation. */
+                content: normal;
             }
-
-            background-color: var(--link-background);
-            border: 1px solid var(--link-background);
-            text-transform: uppercase;
-
-            &::before {
-                display: inline-block;
-                margin-inline-end: 0.2em;
-                color: inherit;
-                font-weight: normal;
-                content: "⎆";
-            }
-
-            @media print {
-                &[href]::after {
-                    /* Remove href from printing as there is no point in showing it for internal navigation. */
-                    content: normal;
-                }
-            }
-
-            &:hover {
-                text-shadow: 0 0 0.1em var(--link-active-color);
-                background-color: var(--link-active-background);
-            }
-
-            &:active {
-                text-shadow: 0 0 0.6em var(--link-active-color);
-            }
+        }
+    
+        &:hover {
+            text-shadow: 0 0 0.1em var(--link-active-color);
+            background-color: var(--link-active-background);
+        }
+    
+        &:active {
+            text-shadow: 0 0 0.6em var(--link-active-color);
         }
     }
 
     &.backlink {
+        display: block;
+        margin-top: 1em;
+
         @media (min-width: 1200px) {
+            position: absolute;
             float: left;
             writing-mode: sideways-lr;
         }
@@ -318,15 +345,15 @@ article > figure {
 
     a[href^="https://creativecommons.org/licenses/"]::before,
     a[href^="https://creativecommons.org/publicdomain/"]::before {
-        background-image: url(/cc.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
         display: inline-block;
         width: 1em;
         height: 1em;
         position: relative;
         top: 0.2em;
         margin-inline-end: 0.2em;
+        background-image: url(/cc.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
         content: "";
 
         @media print {
