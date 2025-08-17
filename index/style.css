@@ -1,6 +1,6 @@
 .background-character {
     position: absolute;
-    top: 0%;
+    top: 10%;
     right: 0%;
     z-index: -100;
     max-width: 100%;
@@ -9,7 +9,7 @@
         filter: opacity(30%) grayscale(70%);
         clip-path: polygon(90% 0, 30% 10%, 10% 90%, 65% 80%);
         position: relative;
-        right: -10%;
+        right: 0;
         width: 100%;
         max-width: 50rem;
     }
@@ -23,6 +23,7 @@
     z-index: 100;
     max-width: 100%;
     @media (max-width: 767px) {
+        top: 45vh;
         left: 0
     }
 
