@@ -7,14 +7,14 @@ body {
         6rem 3rem;
     background-attachment:
         fixed;
-    animation: 5s linear 0s infinite falling;
+    animation: 5s linear 0s infinite disgusting-circles;
 
     @media (prefers-reduced-motion: reduce) {
         animation: none;
     }
 }
 
-@keyframes falling {
+@keyframes disgusting-circles {
     0% {
         background-position:
             0 0,
@@ -39,15 +39,5 @@ body {
         background-position:
             12rem 0rem,
             15rem 1rem;
-    }
-}
-
-span.attribution-license {
-    img.creative-commons {
-        display: inline;
-        width: 1em;
-        height: 1em;
-        position: relative;
-        top: 0.2em;
     }
 }

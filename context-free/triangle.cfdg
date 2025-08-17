@@ -1,0 +1,10 @@
+// Make the background transparent
+CF::Background = [alpha -1]
+// Set the starting shape (required before version 3.4),
+// set the desired color in HSB
+startshape triangle [hue 227.9 saturation 0.5064 brightness 0.4608]
+// Define the shape rule
+shape triangle {
+    ▲ [] // Boring "TRIANGLE []" can be used, too
+    triangle [size 0.87 rotate 5 brightness -0.1] // Recurse
+}

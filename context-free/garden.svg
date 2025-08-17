@@ -1,0 +1,657 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="500px" height="342px" version="1.1"
+     xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <polygon id="TRIANGLE" points="0,0.57735 -0.5,-0.288675 0.5,-0.288675"/>
+  </defs>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 162.07557          0          0 -97.245341  81.037784  292.97313)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 162.07557          0          0 -97.245341  204.12964  292.97313)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 162.07557          0          0 -97.245341  312.16273  292.97313)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 162.07557          0          0 -97.245341  418.96222  292.97313)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 162.07557          0          0 -97.245341  247.33276  292.97313)"/>
+  <circle r="0.5"
+          stroke="none" fill="#1a0f05" fill-rule="nonzero"
+          transform="matrix( 39.075489          0          0 -32.415114  418.96222  270.85408)"/>
+  <circle r="0.5"
+          stroke="none" fill="#1a0f05" fill-rule="nonzero"
+          transform="matrix( 43.844555          0          0 -32.415114  247.33276   289.7988)"/>
+  <circle r="0.5"
+          stroke="none" fill="#1a0f05" fill-rule="nonzero"
+          transform="matrix( 48.418498          0          0 -32.415114  81.037784   306.7591)"/>
+  <circle r="0.5"
+          stroke="none" fill="#1a0f05" fill-rule="nonzero"
+          transform="matrix( 44.775698          0          0 -32.415114  312.16273  310.65981)"/>
+  <circle r="0.5"
+          stroke="none" fill="#1a0f05" fill-rule="nonzero"
+          transform="matrix( 35.997052          0          0 -32.415114  204.12964  278.92224)"/>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-24.334817 -15.268613  15.268613 -24.334817  57.723025  178.06064)">
+    <path id="path1" d="M 0,0 C 0.3,0.3 0.7,0.5 1,0 C 0.8,0.8 0.5,1.2 0,1 C 0.2,1.3 -0.7,0.5 -1,0 C -0.3,0.3 0,0 0,0 Z"/>
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-24.334817 -15.268613  15.268613 -24.334817  57.723025  178.06064)">
+    <path id="path2" d="M -1,0 C -0.7270297,0.55506968 -0.055770662,0.78375641 0.49929902,0.51078611 C 0.71442329,0.40499302 0.88992601,0.2329656 1,0.02 M -0.5,0.5 C -0.26496323,0.43122622 -0.078305858,0.25203514 0,0.02 M -0.5,0.5 C -0.37141267,0.72371165 -0.19358681,0.91521643 0.02,1.06"/>
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 18.604359 -20.367501 -20.367501 -18.604359  419.34282  28.731475)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 18.604359 -20.367501 -20.367501 -18.604359  419.34282  28.731475)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-26.238195   -15.0449    15.0449 -26.238195  216.52204   208.3892)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-26.238195   -15.0449    15.0449 -26.238195  216.52204   208.3892)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 21.686755 -11.595415 -11.595415 -21.686755  344.57345  149.12363)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 21.686755 -11.595415 -11.595415 -21.686755  344.57345  149.12363)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-26.943229 -12.563834  12.563834 -26.943229  46.585647  267.13913)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-26.943229 -12.563834  12.563834 -26.943229  46.585647  267.13913)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-23.469483 -14.657415  14.657415 -23.469483  177.23141  173.44805)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-23.469483 -14.657415  14.657415 -23.469483  177.23141  173.44805)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 31.226399 -14.561109 -14.561109 -31.226399  451.53961   229.7748)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 31.226399 -14.561109 -14.561109 -31.226399  451.53961   229.7748)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 33.389705 -11.420207 -11.420207 -33.389705  283.26873  187.31892)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 33.389705 -11.420207 -11.420207 -33.389705  283.26873  187.31892)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 33.648107 -10.777158 -10.777158 -33.648107  239.13492   197.4443)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 33.648107 -10.777158 -10.777158 -33.648107  239.13492   197.4443)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( -25.70937 -18.407386  18.407386  -25.70937  182.86122  151.16154)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( -25.70937 -18.407386  18.407386  -25.70937  182.86122  151.16154)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-31.269635 -14.138485  14.138485 -31.269635  283.65531  209.84137)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-31.269635 -14.138485  14.138485 -31.269635  283.65531  209.84137)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 24.025508  -11.27626  -11.27626 -24.025508  117.59609  107.26139)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 24.025508  -11.27626  -11.27626 -24.025508  117.59609  107.26139)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 18.449963 -17.008859 -17.008859 -18.449963  424.68527  45.753218)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 18.449963 -17.008859 -17.008859 -18.449963  424.68527  45.753218)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-25.099896 -11.250395  11.250395 -25.099896  389.18859  167.91653)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-25.099896 -11.250395  11.250395 -25.099896  389.18859  167.91653)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-24.857758 -1.0460318  1.0460318 -24.857758  372.97957  49.265178)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-24.857758 -1.0460318  1.0460318 -24.857758  372.97957  49.265178)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 33.954813 -12.623896 -12.623896 -33.954813  346.94186  258.52077)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 33.954813 -12.623896 -12.623896 -33.954813  346.94186  258.52077)">
+    <use xlink:href="#path2" />
+  </g>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.966045          0          0 -38.898136  418.96222   248.1635)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.7245341          0          0 -32.415114  418.96222  241.68048)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.966045          0          0 -38.898136  81.037784  284.06852)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.7245341          0          0 -32.415114  81.037784   277.5855)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.966045          0          0 -38.898136  312.16273  287.96923)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.7245341          0          0 -32.415114  312.16273   281.4862)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.966045          0          0 -38.898136  247.33276  267.10822)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.7245341          0          0 -32.415114  247.33276   260.6252)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.966045          0          0 -38.898136  204.12964  256.23166)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.7245341          0          0 -32.415114  204.12964  249.74864)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.564988 0.55101021  1.6530306 -37.694965  80.900032  261.27768)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.4237412 0.41325766  1.3775255 -31.412471  81.175537  254.99519)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.576986 -0.044252076 -0.13275623 -37.730959  418.97328  225.37565)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.4327397 -0.033189057 -0.11063019 -31.442466  418.95115  219.08716)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.536453   1.009895  3.0296849 -37.609359  311.91025  265.17125)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.4023398 0.75742122  2.5247374 -31.341133   312.4152  258.90302)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.555795  0.7311385  2.1934155 -37.667384  203.94686  233.43852)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix(  9.416846 0.54835387  1.8278462 -31.389487  204.31243  227.16062)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.544391 0.90597346  2.7179204 -37.633174  247.10626  244.31223)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.4082935 0.67948009  2.2649336 -31.360978  247.55925  238.04003)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.159628 0.98863096  2.9658929 -36.478885  81.754894  239.18761)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.1197213 0.74147322  2.4715774 -30.399071   82.24921   233.1078)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.169327 0.86106878  2.5832063  -36.50798  418.66951  203.26401)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.1269951 0.64580158  2.1526719 -30.423317  419.10004  197.17935)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.185336  0.5929027  1.7787081 -36.556009  313.78182  243.14468)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.1390022 0.44467702  1.4822567 -30.463341  314.07827  237.05201)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.102476  1.5375363  4.6126089 -36.307429  205.02475  211.35255)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.0768573  1.1531522  3.8438408 -30.256191  205.79352  205.30131)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 12.156433  1.0271772  3.0815317 -36.469299  248.66141  222.26255)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 9.1173247 0.77038293  2.5679431 -30.391082    249.175  216.18434)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix(  11.80266 0.85736524  2.5720957 -35.407981  83.517815  217.81902)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.8519953 0.64302393  2.1434131 -29.506651  83.946498  211.91769)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix(  11.83295 -0.13838119 -0.41514357 -35.498851  315.00222  221.73224)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.8747129 -0.10378589 -0.34595297 -29.582376  314.93303  215.81577)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.832436 -0.17697499 -0.53092497 -35.497309  420.43589  181.88347)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.8743272 -0.13273124 -0.44243748 -29.581091   420.3474  175.96725)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.745903  1.4393121  4.3179362  -35.23771     207.74  190.08408)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.8094276  1.0794841  3.5982802 -29.364759  208.45965  184.21112)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.766363  1.2611766  3.7835297 -35.299089  250.40047  200.89128)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.8247723 0.94588241  3.1529414 -29.415908  251.03106   195.0081)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.455906 0.72376527  2.1712958 -34.367719  314.54452  200.93032)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.5919298 0.54282395  1.8094132 -28.639766   314.9064  195.20236)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.390584  1.4199358  4.2598074 -34.171753  84.877562  197.06134)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.5429382  1.0649518  3.5498395 -28.476461  85.587529  191.36605)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.424551 -1.1141204 -3.3423611 -34.273653  420.36047  161.07473)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.5684132 -0.83559028 -2.7853009 -28.561377  419.80341  155.36246)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.282796  2.1119039  6.3357116 -33.848389  210.09064  169.41297)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.4620972  1.5839279  5.2797597 -28.206991   211.1466  163.77157)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.393393  1.3972177   4.191653  -34.18018  252.57352   180.2069)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix(  8.545045  1.0479133  3.4930442 -28.483483  253.27213   174.5102)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.084679  1.0509104  3.1527312 -33.254036  87.454706  177.05135)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.3135091  0.7881828   2.627276 -27.711697  87.980161  171.50901)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.134044 -0.087102024 -0.26130607 -33.402131  316.01382  180.80201)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.3505328 -0.065326518 -0.21775506 -27.835109  315.97027  175.23499)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix(  11.05597 -1.3191043 -3.9573128 -33.167911    418.462  140.98963)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.2919778 -0.98932821 -3.2977607 -27.639926  417.80245  135.46164)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 11.020114   1.591101  4.7733031 -33.060342  213.91668   149.6024)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.2650856  1.1933258  3.9777526 -27.550285  214.71223  144.09235)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix(  10.89625   2.290471  6.8714129 -32.688749  254.79534  160.14418)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.1721873  1.7178532  5.7261774 -27.240624  255.94058  154.69605)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.784216 -0.5901691 -1.7705073 -32.352649  315.98716  161.22998)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.0881623 -0.44262683 -1.4754228 -26.960541  315.69208  155.83787)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.800009 0.086164193 0.25849258 -32.400028  89.534985  157.58199)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 8.1000069 0.064623144 0.21541048 -27.000023  89.578067  152.18199)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix(  10.53774  2.3672055  7.1016164  -31.61322  216.50708  130.19661)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.9033049  1.7754041  5.9180137  -26.34435  217.69068  124.92774)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.624246 -1.9424289 -5.8272867 -31.872737   416.3094  121.53375)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.9681841 -1.4568217 -4.8560723 -26.560614  415.33819  116.22162)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.544691  2.3360452  7.0081357 -31.634074  258.79227  140.98785)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.9085185  1.7520339  5.8401131 -26.361728  259.96029   135.7155)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.469934 0.36637874  1.0991362 -31.409802  89.615719  138.59946)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.8524504 0.27478405 0.91594684 -26.174835  89.798908  133.36449)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.180663  2.4714047  7.4142141  -30.54199  220.62364   111.6663)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.6354975  1.8535535  6.1785117 -25.451658  221.85934  106.57596)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.307504 -1.8732634 -5.6197901 -30.922511  412.89286  102.86213)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.7306278 -1.4049475 -4.6831584 -25.768759  411.95623  97.708379)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.232292  2.2480996  6.7442989 -30.696876  262.90234  122.45654)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.6742189  1.6860747  5.6202491  -25.58073  264.02639  117.34039)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix(  10.16202 -0.025326021 -0.075978062 -30.486061  90.354808  120.20009)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.6215154 -0.018994515 -0.063315051 -25.405051  90.342145  115.11908)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.017146  1.7099981  5.1299942 -30.051437  225.13895  93.809256)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.5128593  1.2824985  4.2749951 -25.042864  225.99395  88.800683)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix(  9.874036 -2.4022312 -7.2066937 -29.622108  409.74689  84.715632)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix(  7.405527 -1.8016734 -6.0055781  -24.68509  408.54578  79.778614)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 10.049694  1.5069684  4.5209053 -30.149082  267.02179  104.50438)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.5372704  1.1302263  3.7674211 -25.124235  267.77528  99.479532)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 9.8562502  -0.136148 -0.40844399 -29.568751  90.338193  102.34011)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.3921876  -0.102111 -0.34036999 -24.640625  90.270119   97.41199)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 9.3919932 -2.9924351 -8.9773052  -28.17598  405.69054  67.315559)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 7.0439949 -2.2443263 -7.4810877 -23.479983  404.19432  62.619562)"/>
+  <circle r="0.5"
+          stroke="none" fill="#331f0a" fill-rule="nonzero"
+          transform="matrix( 8.8278683 -3.6729471 -11.018841 -26.483605   400.6239  50.738539)"/>
+  <circle r="0.5"
+          stroke="none" fill="#b36b24" fill-rule="nonzero"
+          transform="matrix( 6.6209012 -2.7547103 -9.1823678 -22.069671  398.78743  46.324605)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 48.622671          0          0 -16.531708  418.96222  278.95786)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 48.622671          0          0 -16.531708  81.037784  314.86288)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 48.622671          0          0 -16.531708  247.33276  297.90258)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 48.622671          0          0 -16.531708  204.12964  287.02602)"/>
+  <rect x="-0.5" y="-0.5" width="1" height="1" 
+        stroke="none" fill="#0d0b01" fill-rule="nonzero"
+        transform="matrix( 48.622671          0          0 -16.531708  312.16273  318.76358)"/>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 24.979518 -6.8395193 -6.8395193 -24.979518   252.9138  85.203279)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 24.979518 -6.8395193 -6.8395193 -24.979518   252.9138  85.203279)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 34.052717 -12.982491 -12.982491 -34.052717  281.81412  233.21514)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 34.052717 -12.982491 -12.982491 -34.052717  281.81412  233.21514)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 34.531276 -16.102198 -16.102198 -34.531276  115.62357  266.67182)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 34.531276 -16.102198 -16.102198 -34.531276  115.62357  266.67182)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-25.920938 -19.441591  19.441591 -25.920938  227.35215  143.09711)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-25.920938 -19.441591  19.441591 -25.920938  227.35215  143.09711)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 27.374167 -12.882235 -12.882235 -27.374167  451.49041  208.11105)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 27.374167 -12.882235 -12.882235 -27.374167  451.49041  208.11105)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-22.646658 -18.107652  18.107652 -22.646658  196.14633  94.839184)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-22.646658 -18.107652  18.107652 -22.646658  196.14633  94.839184)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-26.254935 -14.918281  14.918281 -26.254935  281.07097  244.01603)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-26.254935 -14.918281  14.918281 -26.254935  281.07097  244.01603)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 26.340077 -5.7619517 -5.7619517 -26.340077  245.65281  126.42389)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 26.340077 -5.7619517 -5.7619517 -26.340077  245.65281  126.42389)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-25.213232 -8.8938899  8.8938899 -25.213232  389.70763   153.9332)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-25.213232 -8.8938899  8.8938899 -25.213232  389.70763   153.9332)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-29.250135 -18.448501  18.448501 -29.250135  173.95408  196.33517)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-29.250135 -18.448501  18.448501 -29.250135  173.95408  196.33517)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-26.218066 -6.8483821  6.8483821 -26.218066  386.68173  117.62605)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-26.218066 -6.8483821  6.8483821 -26.218066  386.68173  117.62605)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 32.983344 -12.234838 -12.234838 -32.983344  114.20958  227.03095)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 32.983344 -12.234838 -12.234838 -32.983344  114.20958  227.03095)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix(-23.992735  -14.48356   14.48356 -23.992735  221.23076  186.30498)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix(-23.992735  -14.48356   14.48356 -23.992735  221.23076  186.30498)">
+    <use xlink:href="#path2" />
+  </g>
+  <g stroke="none" fill="#12b312" fill-rule="nonzero"
+     transform="matrix( 25.838444 -8.3996561 -8.3996561 -25.838444  283.90799  171.21454)">
+    <use xlink:href="#path1" />
+  </g>
+  <g fill="none" stroke="#333333"
+     stroke-width="0.01" stroke-linecap="miter" stroke-linejoin="miter" stroke-miterlimit="4"
+     transform="matrix( 25.838444 -8.3996561 -8.3996561 -25.838444  283.90799  171.21454)">
+    <use xlink:href="#path2" />
+  </g>
+  <circle r="0.5"
+          stroke="none" fill="#ffffb3" fill-rule="nonzero"
+          transform="matrix(  13.48027 -0.73771138 -0.73771138  -13.48027  314.36419  131.57339)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff334e" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix(-10.784216  0.5901691  1.1803382  21.568433  315.10191  145.05366)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff33dc" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix(-4.8810068  9.6344899   19.26898  9.7620135  326.40731  137.67464)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff336e" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 5.9032096  9.0443208  18.088642 -11.806419   325.6696  124.19437)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff3379" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 4.8810068 -9.6344899  -19.26898 -9.7620135  302.32108  125.47213)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff33a1" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix(-5.9032096 -9.0443208 -18.088642  11.806419  303.05879   138.9524)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff338c" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 10.784216 -0.5901691 -1.1803382 -21.568433  313.62648  118.09312)"/>
+  <circle r="0.5"
+          stroke="none" fill="#4d994d" fill-rule="nonzero"
+          transform="matrix( 12.521432  2.1374976  1.2824985 -7.5128593  225.99395  88.800683)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff3355" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix(  11.01886  1.8809979  3.7619957 -22.037721  227.91769  77.531394)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff3365" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 9.5680247  3.4234784  6.8469569 -19.136049  224.83722  78.489939)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff336b" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 10.161901 -0.055439755 -0.11087951 -20.323802  230.50572  79.457592)"/>
+  <circle r="0.5"
+          stroke="none" fill="#4d994d" fill-rule="nonzero"
+          transform="matrix( 12.320313  -0.170185  -0.102111 -7.3921876  90.270119   97.41199)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff3348" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 10.841875 -0.1497628 -0.29952559  -21.68375  90.116952  86.323708)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff33c1" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 9.7301535  1.5774403  3.1548806 -19.460307  87.347831  87.781434)"/>
+  <circle r="0.5"
+          stroke="none" fill="#ff33ba" fill-opacity="0.90196078" fill-rule="nonzero"
+          transform="matrix( 9.6828698 -1.8455995  -3.691199  -19.36574  92.925282  87.704391)"/>
+  <circle r="0.5"
+          stroke="none" fill="#4d994d" fill-rule="nonzero"
+          transform="matrix( 6.6211381  3.7747036  7.5494073 -13.242276  231.84544  85.111331)"/>
+  <circle r="0.5"
+          stroke="none" fill="#4d994d" fill-rule="nonzero"
+          transform="matrix( 7.4984188 -1.3643948 -2.7287896 -14.996838  221.69777  83.379051)"/>
+  <circle r="0.5"
+          stroke="none" fill="#4d994d" fill-rule="nonzero"
+          transform="matrix( 6.9114602   -2.62423 -5.2484601  -13.82292  85.215863  92.998629)"/>
+  <circle r="0.5"
+          stroke="none" fill="#4d994d" fill-rule="nonzero"
+          transform="matrix( 6.9813082  2.4323241  4.8646483 -13.962616  95.200543  92.860707)"/>
+</svg>

@@ -1,0 +1,168 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="500px" height="434px" version="1.1"
+     xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <polygon id="TRIANGLE" points="0,0.57735 -0.5,-0.288675 0.5,-0.288675"/>
+  </defs>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#3a4676" fill-rule="nonzero"
+       transform="matrix(       500          0          0       -500        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#343f6a" fill-rule="nonzero"
+       transform="matrix( 433.34469 -37.912748 -37.912748 -433.34469        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#2f395f" fill-rule="nonzero"
+       transform="matrix( 372.70049 -65.717153 -65.717153 -372.70049        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#2a3356" fill-rule="nonzero"
+       transform="matrix( 318.03253 -85.216559 -85.216559 -318.03253        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#262e4d" fill-rule="nonzero"
+       transform="matrix( 269.17383 -97.971261 -97.971261 -269.17383        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#222945" fill-rule="nonzero"
+       transform="matrix( 225.86138 -105.32089 -105.32089 -225.86138        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#1f253e" fill-rule="nonzero"
+       transform="matrix( 187.76565 -108.40655 -108.40655 -187.76565        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#1c2138" fill-rule="nonzero"
+       transform="matrix( 154.51452 -108.19223 -108.19223 -154.51452        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#191e33" fill-rule="nonzero"
+       transform="matrix( 125.71236  -105.4852  -105.4852 -125.71236        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#161b2e" fill-rule="nonzero"
+       transform="matrix(  100.9551  -100.9551  -100.9551  -100.9551        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#141829" fill-rule="nonzero"
+       transform="matrix( 79.841746 -95.151688 -95.151688 -79.841746        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#121625" fill-rule="nonzero"
+       transform="matrix(  61.98307 -88.520998 -88.520998  -61.98307        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#101421" fill-rule="nonzero"
+       transform="matrix( 47.007921 -81.420107 -81.420107 -47.007921        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#0f121e" fill-rule="nonzero"
+       transform="matrix( 34.567546 -74.130341 -74.130341 -34.567546        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#0d101b" fill-rule="nonzero"
+       transform="matrix( 24.338355 -66.869081 -66.869081 -24.338355        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#0c0e18" fill-rule="nonzero"
+       transform="matrix( 16.023413 -59.800191 -59.800191 -16.023413        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#0b0d16" fill-rule="nonzero"
+       transform="matrix( 9.3529428 -53.043174 -53.043174 -9.3529428        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#0a0c14" fill-rule="nonzero"
+       transform="matrix( 4.0840712 -46.681148 -46.681148 -4.0840712        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#090b12" fill-rule="nonzero"
+       transform="matrix(4.975234e-15 -40.767732 -40.767732 6.4074282e-15        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#080910" fill-rule="nonzero"
+       transform="matrix(-3.0912335 -35.332961 -35.332961  3.0912335        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#07090e" fill-rule="nonzero"
+       transform="matrix(-5.3582786 -30.388308 -30.388308  5.3582786        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#06080d" fill-rule="nonzero"
+       transform="matrix(-6.9481717  -25.93093  -25.93093  6.9481717        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#06070c" fill-rule="nonzero"
+       transform="matrix(-7.9881323 -21.947213 -21.947213  7.9881323        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#05060a" fill-rule="nonzero"
+       transform="matrix(-8.5873878 -18.415712 -18.415712  8.5873878        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#050609" fill-rule="nonzero"
+       transform="matrix(-8.8389784  -15.30956  -15.30956  8.8389784        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#040508" fill-rule="nonzero"
+       transform="matrix(-8.8215037 -12.598413 -12.598413  8.8215037        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#040508" fill-rule="nonzero"
+       transform="matrix(-8.6007846 -10.250016 -10.250016  8.6007846        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#030407" fill-rule="nonzero"
+       transform="matrix(-8.2314212 -8.2314212 -8.2314212  8.2314212        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#030406" fill-rule="nonzero"
+       transform="matrix( -7.758237 -6.5099338 -6.5099338   7.758237        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#030306" fill-rule="nonzero"
+       transform="matrix(-7.2176007 -5.0538184 -5.0538184  7.2176007        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#020305" fill-rule="nonzero"
+       transform="matrix(-6.6386262 -3.8328126 -3.8328126  6.6386262        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#020304" fill-rule="nonzero"
+       transform="matrix(-6.0442518 -2.8184809 -2.8184809  6.0442518        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#020204" fill-rule="nonzero"
+       transform="matrix(-5.4522016 -1.9844391 -1.9844391  5.4522016        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#020204" fill-rule="nonzero"
+       transform="matrix(-4.8758363 -1.3064764 -1.3064764  4.8758363        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#020203" fill-rule="nonzero"
+       transform="matrix(-4.3248998 -0.76259653 -0.76259653  4.3248998        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010203" fill-rule="nonzero"
+       transform="matrix( -3.806169 -0.33299664 -0.33299664   3.806169        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010203" fill-rule="nonzero"
+       transform="matrix(-3.3240159 1.2299664e-15 -3.4104928e-16  3.3240159        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010102" fill-rule="nonzero"
+       transform="matrix(-2.8808893 0.25204516 0.25204516  2.8808893        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010102" fill-rule="nonzero"
+       transform="matrix(-2.4777248 0.43688973 0.43688973  2.4777248        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010102" fill-rule="nonzero"
+       transform="matrix(-2.1142904  0.5665224  0.5665224  2.1142904        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010102" fill-rule="nonzero"
+       transform="matrix(-1.7894762 0.65131607 0.65131607  1.7894762        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010102" fill-rule="nonzero"
+       transform="matrix(-1.5015337 0.70017665 0.70017665  1.5015337        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010101" fill-rule="nonzero"
+       transform="matrix( -1.248272  0.7206902  0.7206902   1.248272        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010101" fill-rule="nonzero"
+       transform="matrix(-1.0272174  0.7192654  0.7192654  1.0272174        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010101" fill-rule="nonzero"
+       transform="matrix(-0.8357398 0.70126896 0.70126896  0.8357398        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#010101" fill-rule="nonzero"
+       transform="matrix(-0.67115275 0.67115275 0.67115275 0.67115275        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#000101" fill-rule="nonzero"
+       transform="matrix(-0.53079048 0.63257146 0.63257146 0.53079048        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#000001" fill-rule="nonzero"
+       transform="matrix(-0.41206543 0.58849042 0.58849042 0.41206543        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#000001" fill-rule="nonzero"
+       transform="matrix(-0.31251016 0.54128347 0.54128347 0.31251016        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#000001" fill-rule="nonzero"
+       transform="matrix(-0.22980615 0.49282087 0.49282087 0.22980615        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#000001" fill-rule="nonzero"
+       transform="matrix(-0.16180216 0.44454779 0.44454779 0.16180216        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#000001" fill-rule="nonzero"
+       transform="matrix(-0.10652416 0.39755358 0.39755358 0.10652416        250  289.16878)"/>
+  <use xlink:href="#TRIANGLE"
+       stroke="none" fill="#000000" fill-rule="nonzero"
+       transform="matrix(-0.062178662 0.35263271 0.35263271 0.062178662        250  289.16878)"/>
+</svg>

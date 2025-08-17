@@ -1,28 +1,35 @@
 :root {
     /* https://paletton.com/#uid=4120N0kymrngCCipKvQFvkQQEcW */
-    --primary: #da9900;
-    --primary-light: #ffc53d;
     --primary-lighter: #ffe29d;
+    --primary-light: #ffc53d;
+    --primary: #da9900;
     --primary-dark: #996b00;
     --primary-darker: #3d2b00;
-    --secondary: #5a0892;
-    --secondary-light: #7c32ae;
+
     --secondary-lighter: #b487d3;
+    --secondary-light: #7c32ae;
+    --secondary: #5a0892;
     --secondary-dark: #3f0467;
     --secondary-darker: #190029;
-    --tertiary: #009459;
-    --tertiary-light: #2ab17a;
+
     --tertiary-lighter: #83d4b3;
+    --tertiary-light: #2ab17a;
+    --tertiary: #009459;
     --tertiary-dark: #00683e;
     --tertiary-darker: #002a19;
-    --complement: #112a94;
-    --complement-light: #3a52b1;
+
     --complement-lighter: #8d9bd4;
+    --complement-light: #3a52b1;
+    --complement: #112a94;
     --complement-dark: #081b68;
     --complement-darker: #010929;
 
     --font-color: var(--complement-darker);
+    --font-emph-color: var(--secondary-darker);
     --background-color: var(--primary-lighter);
+    --font-alt-color: var(--complement-lighter);
+    --font-alt-emph-color: var(--secondary-lighter);
+    --background-alt-color: var(--primary-darker);
 
     --link-color: var(--tertiary-light);
     --link-background: var(--secondary-dark);
@@ -38,6 +45,33 @@ body {
     background-color: var(--background-color);
     color: var(--font-color);
     font-size: 1.2em;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+main {
+    max-width: 50rem;
+    margin: auto;
+}
+
+p {
+    margin-block: 0;
+    text-align: justify;
+    text-indent: 2em;
+    &+ p {
+        margin-block-start: 0.2em;
+    }
+}
+
+hr {
+    border-style: none;
+    border-block-start: 0.1em ridge var(--font-color);
 }
 
 a {
@@ -64,12 +98,20 @@ a {
     }
 }
 
+/* Navigation */
+
 nav {
     padding: 0 1em;
 
     ul {
         list-style: none;
         padding-inline-start: 0;
+
+        li {
+            @media not (hover) {
+                margin-block-start: 0.5em;
+            }
+        }
 
         li > a {
             display: block;
@@ -88,7 +130,7 @@ nav {
                 margin-inline-end: 0.2em;
                 color: inherit;
                 font-weight: normal;
-                content: "⎆ ";
+                content: "⎆";
             }
 
             @media print {
@@ -102,7 +144,7 @@ nav {
                 text-shadow: 0 0 0.1em var(--link-active-color);
                 background-color: var(--link-active-background);
             }
-            
+
             &:active {
                 text-shadow: 0 0 0.6em var(--link-active-color);
             }
@@ -114,6 +156,7 @@ nav {
             float: left;
             writing-mode: sideways-lr;
         }
+
         @media print {
             display: none;
         }
@@ -125,50 +168,180 @@ nav {
     }
 }
 
-h1 {
-    text-align: center;
-}
+/* Code */
 
-main {
-    max-width: 50rem;
-    margin: auto;
-}
-
-p {
-    text-align: justify;
-    text-indent: 2em;
-    margin-block-end: 0;
-    &+p {
-        margin-block-start: 0.2em;
+.file {
+    margin-block: 0.5em;
+    margin-inline-end: auto;
+    border-inline-start: 0.5em solid var(--tertiary);
+    padding-inline-start: 1em;
+    background-color: var(--background-alt-color);
+    font-family: 'Linux Libertine';
+    
+    .filename {
+        display: inline-block;
+        font-size: smaller;
+        color: var(--font-alt-color);
+    }
+    .file-language {
+        display: inline-block;
+        font-size: smaller;
+        font-style: italic;
+        color: var(--font-alt-color);
+    }
+    .filename + .file-language::before {
+        display: inline-block;
+        position: relative;
+        top: calc((1cap - 1ex) / 2);
+        margin-inline-start: 0.5em;
+        margin-inline-end: 0.2em;
+        font-size: larger;
+        font-style: normal;
+        content: "⌑";
     }
 }
 
 pre {
+    margin-block: 0.2em;
     margin-inline-start: -1em;
+    padding-block: 0.2em;
     padding-inline-start: 1em;
-    border-inline-start: 0.5em solid var(--tertiary);
-    background-color: rgb(255, 255, 255, 0.1);
+    background-color: hsl(from var(--background-color) h s 90%);
+    overflow-x: auto;
+    tab-size: 4;
+    /* Prevent font size from being different (affects em). */
+    font-family: inherit;
 }
 
-code {
+code,
+kbd {
     font-family: 'Fira Code', monospace;
-    font-size: smaller;
 }
+code {
+    font-size: 0.8em;
+
+    .comment {
+        color: var(--complement-light);
+    }
+
+    &[data-lang="sh"] {
+        padding: 0.2em;
+        background-color: var(--background-alt-color);
+        color: var(--font-alt-color);
+    
+        &::before {
+            font-style: normal;
+            color: var(--font-alt-emph-color);
+            content: "$ ";
+        }
+    }
+}
+
+
+/* Figures with images */
 
 figure {
     max-width: 100%;
-    img {
-        max-width: 100%;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-block: 0.5em;
+
+    > img,
+    > svg {
         display: block;
+        max-width: 100%;
+        margin: auto;
+        border-style: ridge;
+        border-width: 0.5em;
+        border-color: var(--complement-light);
+        background-color: var(--background-color);
+        filter: drop-shadow(0em 0.2em 0.2em var(--complement-darker));
     }
-    border-style: ridge;
-    border-width: 0.5em;
-    border-color: var(--complement-light);
 
     figcaption {
+        margin-block-start: 0.1em;
+        border: 0.1em solid var(--complement-darker);
         padding: 0.2em;
         text-align: center;
-        font-size: smaller;
         background-color: var(--primary-lighter);
+        filter: drop-shadow(0em 0.05em 0.05em var(--complement-darker));
+    }
+}
+article > figure {
+    width: fit-content;
+}
+
+/* Gallery */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1em;
+
+    & > * {
+        margin: auto;
+    }
+}
+
+/* Links to source, license, etc. */
+
+.original-reference {
+    text-align: end;
+}
+
+.license {
+    display: inline-block;
+
+    a[href^="https://creativecommons.org/licenses/"]::before,
+    a[href^="https://creativecommons.org/publicdomain/"]::before {
+        background-image: url(cc.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        position: relative;
+        top: 0.2em;
+        margin-inline-end: 0.2em;
+        content: "";
+    }
+}
+
+/* Quotes */
+
+div:has(> blockquote) {
+    margin-block: 0.2em;
+    margin-inline: 1em;
+    border-left-style: ridge;
+    border-left-width: 0.4em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-color: var(--complement-light);
+    padding: 0.8em;
+
+    &:has(> .quote-source) {
+        padding-block-end: 0;
+    }
+
+    > blockquote {
+        margin: 0;
+    }
+
+    &> blockquote:has(+ .quote-source) {
+        margin-block-end: 0.2em;
+    }
+
+    .quote-source {
+        text-align: end;
+
+        &::after {
+            display: block;
+            width: 50%;
+            margin-inline-start: auto;
+            border-bottom-style: solid;
+            border-color: var(--complement-light);
+            content: "";
+        }
     }
 }
