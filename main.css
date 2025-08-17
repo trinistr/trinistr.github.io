@@ -202,7 +202,7 @@ nav {
         display: block;
         margin-top: 1em;
 
-        @media (min-width: 1200px) {
+        @media (min-width: 60rem) {
             position: absolute;
             float: left;
             writing-mode: sideways-lr;
