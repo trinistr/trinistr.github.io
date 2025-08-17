@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Context Free — Locatio Terriblis</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/main.css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
                 Now, seeing is believeing or something like that, so let's just jump into it with a small example:
             </p>
             <div class="file">
-                <span class="filename"><a href="context-free/triangle.cfdg">triangle.cfdg</a></span>
+                <span class="filename"><a href="triangle.cfdg">triangle.cfdg</a></span>
                 <pre><code data-lang="cfdg"><span class="comment">// Make the background transparent</span>
 CF::Background = [alpha -1]
 <span class="comment">// Set the starting shape (required before version 3.4),
@@ -55,7 +55,7 @@ shape triangle {
                 Now, by default <b>Context Free</b> adds some borders to the generated image. This makes sense, yes. However, this concrete file uses only a single unit-sized shaped at most (all primitives have a size of 1 unit), so borders would be gigantic. Not only that, but default positioning is also off, so cropping needs to be done. And, of course, we want a nice vector image to be served on the internet, so SVG makes more sense. So, let's generate the image with <code data-lang="sh"><kbd>cfdg --crop --bordersize=0 --svg triangle.cfdg triangle.svg</kbd></code> and see this beauty. <b>Context Free</b> on Windows and macOS probably have a graphical interface to do this. I wouldn't know.
             </p>
             <figure>
-                <img src="context-free/triangle.svg"
+                <img src="triangle.svg"
                     alt="A triangle inside a triangle inside a triangle inside a triangle inside a …">
                 <figcaption>
                     Rotationing darkening triangular thingy. Dedicated to public domain <span class="license">(<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>)</span>, if you are so inclined to take this useless image and use it anyway.
@@ -68,7 +68,7 @@ shape triangle {
                 Now, for something more interesting, how about randomness? <b>Context Free</b> allows for a few different ways to randomize things, such as choosing one shape out of a set, looping a random number of times, or using randomized values for adjustments. Let's look at a garden:
             </p>
             <div class="file">
-                <span class="filename"><a href="context-free/garden.cfdg">garden.cfdg</a> (excerpts)</span>
+                <span class="filename"><a href="garden.cfdg">garden.cfdg</a> (excerpts)</span>
                 <pre><code data-lang="cfdg">shape GARDEN {
     <span class="comment">// Generate random number of plants at random positions</span>
     loop 4…10 [x 1…5] {
@@ -101,7 +101,7 @@ rule {
                 </code></pre>
             </div>
             <figure>
-                <img src="context-free/garden.svg" alt="A bunch of questionably-drawn plants with stems, leaves and flowers">
+                <img src="garden.svg" alt="A bunch of questionably-drawn plants with stems, leaves and flowers">
                 <figcaption>
                     <cite>Garden</cite>
                     by me myself
