@@ -18,12 +18,12 @@
 .foreground-character {
     pointer-events: none;
     position: absolute;
-    top: 15vh;
+    top: 25vh;
     left: 20vw;
     z-index: 100;
     max-width: 100%;
     @media (max-width: 767px) {
-        top: 45vh;
+        /* top: 45vh; */
         left: 0
     }
 
@@ -31,11 +31,12 @@
         width: 40vw;
         min-width: 20rem;
         height: 40vh;
-        transform: scaleX(-1);
 
         polygon {
-            filter: drop-shadow(1px 1px 2px var(--tertiary-darker)) opacity(0.1);
-            fill: var(--tertiary-lighter);
+            fill: var(--glass-color);
+            stroke: var(--glass-border-color);
+            stroke-width: 0.015rem;
+            filter: drop-shadow(0.1rem 0.1rem 0.1rem var(--glass-shadow-color)) opacity(0.1);
         }
     }
 }
