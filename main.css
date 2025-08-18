@@ -92,10 +92,7 @@ main {
     margin-block-start: 1em;
     border-block-start: 0.1em solid var(--border-color);
     padding: 1em;
-    color: var(--font-emph-color);
     background-color: var(--background-special-color);
-    text-align: center;
-    font-size: smaller;
 }
 
 /* Base styling */
@@ -390,6 +387,14 @@ article > figure {
             content: none;
         }
     }
+}
+
+.fine-print {
+    max-width: min(50rem, 100vw);
+    margin: auto;
+    color: var(--font-emph-color);
+    text-align: center;
+    font-size: smaller;
 }
 
 /* Quotes */
