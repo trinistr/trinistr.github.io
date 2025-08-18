@@ -44,23 +44,19 @@
     --shadow-color: var(--complement-darker);
     --border-standout-color: var(--tertiary);
 
+    --glass-color: var(--tertiary-lighter);
+    --glass-border-color: hsl(from var(--glass-color) h s 80%);
+    --glass-shadow-color: var(--tertiary-darker);
+
     @media (prefers-color-scheme: dark) {
         --font-color: var(--primary-lighter);
         --font-emph-color: var(--secondary-lighter);
         --background-color: var(--complement-darker);
         --background-special-color: hsl(from var(--background-color) h s 10%);
-        --font-alt-color: var(--complement-lighter);
-        --font-alt-emph-color: var(--secondary-lighter);
-        --background-alt-color: var(--primary-darker);
-    
-        --link-color: var(--tertiary-light);
-        --link-background: var(--secondary-dark);
-        --link-active-color: var(--tertiary-lighter);
-        --link-active-background: var(--secondary);
-    
-        --border-color: var(--complement-light);
-        --shadow-color: var(--complement-darker);
-        --border-standout-color: var(--tertiary);
+
+        --glass-color: var(--tertiary);
+        --glass-border-color: hsl(from var(--glass-color) h s 40%);
+        --glass-shadow-color: hsl(from var(--tertiary-darker) h s 5%);
     }
 }
 
@@ -88,7 +84,7 @@ main {
     flex: 1;
     max-width: min(50rem, 100vw);
     margin: auto;
-    padding-inline: 8px;
+    padding-inline: 0.5em;
 }
 
 .page-wrapper > footer {
@@ -110,6 +106,7 @@ h1 {
 
 h2 {
     text-align: center;
+    margin-block: 0.5em;
 }
 
 p {
@@ -154,11 +151,38 @@ a {
 /* Navigation */
 
 nav {
-    padding: 0 1em;
+    &:has(ul) {
+        margin-block: 0.5em;
+        padding: 0.5em;
+        position: relative;
+        
+        &::before {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 0.5px solid var(--glass-border-color);
+            background-color: var(--glass-color);
+            filter: drop-shadow(0.2em 0.2em 0.5em var(--glass-shadow-color)) opacity(0.1);
+            content: "";
+        }
 
-    ul {
-        list-style: none;
-        padding-inline-start: 0;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-block: 0.5em;
+        }
+
+        h2 {
+            filter: drop-shadow(0 0 0.02em hsl(from var(--font-color) h s 90%));
+        }
     }
 
     a {
@@ -200,7 +224,9 @@ nav {
 
     &.backlink {
         display: block;
+        /* Don't care about orientation, margin needs to be on top and left. */
         margin-top: 1em;
+        margin-left: 0.5em;
 
         @media (min-width: 60rem) {
             position: absolute;
@@ -227,7 +253,7 @@ nav {
     border-inline-start: 0.5em solid var(--border-standout-color);
     padding-inline-start: 1em;
     background-color: var(--background-alt-color);
-    font-family: 'Linux Libertine';
+    font-family: "Linux Libertine";
     
     .filename {
         display: inline-block;
@@ -266,7 +292,7 @@ pre {
 
 code,
 kbd {
-    font-family: 'Fira Code', monospace;
+    font-family: "Fira Code", monospace;
 }
 code {
     font-size: 0.8em;
