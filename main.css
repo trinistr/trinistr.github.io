@@ -157,6 +157,7 @@ nav {
     &:has(ul) {
         margin-block: 0.5em;
         padding: 0.5em;
+        padding-inline: 1em;
         position: relative;
         
         &::before {
@@ -170,6 +171,7 @@ nav {
             border: 0.5px solid var(--glass-border-color);
             background-color: var(--glass-color);
             filter: drop-shadow(0.2em 0.2em 0.5em var(--glass-shadow-color)) opacity(0.1);
+            transform: rotate(0.5deg);
             content: "";
         }
 
@@ -412,6 +414,12 @@ article > figure {
     color: var(--font-emph-color);
     text-align: center;
     font-size: small;
+}
+span.fine-print {
+    max-width: initial;
+}
+nav a .fine-print {
+    color: var(--font-alt-emph-color);
 }
 
 /* Quotes */
