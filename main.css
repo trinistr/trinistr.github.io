@@ -31,9 +31,9 @@
     --font-emph-color: var(--secondary-darker);
     --background-color: var(--primary-lighter);
     --background-special-color: hsl(from var(--background-color) h s 90%);
-    --font-alt-color: var(--complement-lighter);
+    --font-alt-color: var(--complement-light);
     --font-alt-emph-color: var(--secondary-lighter);
-    --background-alt-color: var(--primary-darker);
+    --background-alt-color: var(--primary-light);
 
     --link-color: var(--tertiary-light);
     --link-background: var(--secondary-dark);
@@ -53,6 +53,10 @@
         --font-emph-color: var(--secondary-lighter);
         --background-color: var(--complement-darker);
         --background-special-color: hsl(from var(--background-color) h s 10%);
+        --font-alt-color: var(--complement-dark);
+        --background-alt-color: var(--primary-dark);
+
+        --shadow-color: hsl(from var(--complement-darker) h s 5%);
 
         --glass-color: var(--tertiary);
         --glass-border-color: hsl(from var(--glass-color) h s 40%);
@@ -80,7 +84,7 @@ body {
     height: 100lvh;
 }
 
-main {
+main, .preface {
     flex: 1;
     max-width: min(50rem, 100vw);
     margin: auto;
@@ -91,7 +95,7 @@ main {
     width: 100%;
     margin-block-start: 1em;
     border-block-start: 0.1em solid var(--border-color);
-    padding: 1em;
+    padding: 0.5em;
     background-color: var(--background-special-color);
 }
 
@@ -110,6 +114,8 @@ p {
     margin-block: 0;
     text-align: justify;
     text-indent: 2em;
+    font-family: serif;
+
     &+ p {
         margin-block-start: 0.2em;
     }
@@ -224,6 +230,7 @@ nav {
         /* Don't care about orientation, margin needs to be on top and left. */
         margin-top: 1em;
         margin-left: 0.5em;
+        margin-right: 0.5em;
 
         @media (min-width: 60rem) {
             position: absolute;
@@ -240,6 +247,16 @@ nav {
             text-align: center;
         }
     }
+}
+
+/* Special blocks */
+
+.preface {
+    margin-block: 0.5em;
+    padding: 1em;
+    background-color: var(--background-alt-color);
+    color: var(--font-alt-color);
+    filter: drop-shadow(0em 0.05em 0.1em var(--shadow-color));
 }
 
 /* Files and code */
@@ -394,7 +411,7 @@ article > figure {
     margin: auto;
     color: var(--font-emph-color);
     text-align: center;
-    font-size: smaller;
+    font-size: small;
 }
 
 /* Quotes */
