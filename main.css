@@ -143,6 +143,30 @@ a {
         color: var(--link-active-color);
     }
 
+    &[rel=license][href^="https://creativecommons.org"]::before {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        position: relative;
+        top: 0.2em;
+        margin-inline-end: 0.2em;
+        background-image: url(/cc.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        content: "";
+
+        @media print {
+            display: hidden;
+            background-image: none;
+            content: none;
+        }
+    }
+
+    &[rel=external]::after {
+        text-transform: none;
+        content: url(/external-link.svg);
+    }
+
     @media print {
         &[href]::after {
             text-transform: none;
@@ -386,26 +410,6 @@ article > figure {
 
 .license {
     display: inline-block;
-
-    a[href^="https://creativecommons.org/licenses/"]::before,
-    a[href^="https://creativecommons.org/publicdomain/"]::before {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        position: relative;
-        top: 0.2em;
-        margin-inline-end: 0.2em;
-        background-image: url(/cc.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        content: "";
-
-        @media print {
-            display: hidden;
-            background-image: none;
-            content: none;
-        }
-    }
 }
 
 .fine-print {
