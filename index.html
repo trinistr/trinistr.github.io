@@ -23,12 +23,14 @@
         <noscript>
             Oh, hello there. It seems that your browser doesn't support JavaScript. Or you disabled it as a reasonable person. In any case, that's completely fine. This website doesn't need scripting support at all. Modern CSS support, however, is, not exactly required, but presupposed.
         </noscript>
-        <main>
-            <h1>A quaint introduction to <span aria-label="void">v⌾id</span></h1>
-            <nav>
+        <main aria-labelledby="header-title">
+            <h1 aria-label="A quaint introduction to void" id="header-title">A quaint introduction to v⌾id</h1>
+            <nav aria-labelledby="header-articles-navigation">
+                <h2 id="header-articles-navigation">Articles</h2>
                 <ul>
-                    <li><a href="circles-of-woe/">Circles of woe || <span class="fine-print">⚠️ seizure and nausea warning</span></a></li>
                     <li><a href="context-free-art/">Context Free — ars ex machina</a></li>
+                    <li><a href="100-percent-coverage/">The 100%: Why coverage doesn't matter and why it does</a></li>
+                    <li><a href="circles-of-woe/">Circles of woe || <span class="fine-print">⚠️ seizure and nausea warning</span></a></li>
                     <li><a href="nothing/">Nothing</a></li>
                 </ul>
             </nav>

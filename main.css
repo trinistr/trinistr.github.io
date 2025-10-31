@@ -84,7 +84,7 @@ body {
     height: 100lvh;
 }
 
-main, .preface {
+main, .big-note {
     flex: 1;
     max-width: min(50rem, 100vw);
     margin: auto;
@@ -262,12 +262,19 @@ nav {
 
 /* Special blocks */
 
-.preface {
+.big-note {
     margin-block: 0.5em;
     padding: 1em;
     background-color: var(--background-alt-color);
     color: var(--font-alt-color);
     filter: drop-shadow(0em 0.05em 0.1em var(--shadow-color));
+
+    a {
+        color: var(--tertiary-darker);
+        &:hover {
+            color: var(--tertiary-dark);
+        }
+    }
 }
 
 /* Files and code */
