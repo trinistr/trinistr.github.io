@@ -24,20 +24,20 @@
     --complement-dark: #081b68;
     --complement-darker: #010929;
 
-    --standout-color: var(--tertiary);
+    --standout-color: var(--tertiary-dark);
     --standout-alt-color: var(--secondary);
 
     --font-color: var(--complement-darker);
     --font-emph-color: var(--secondary-darker);
     --background-color: var(--primary-lighter);
     --background-special-color: hsl(from var(--background-color) h s 90%);
-    --font-alt-color: var(--complement-light);
+    --font-alt-color: var(--complement);
     --font-alt-emph-color: var(--secondary-lighter);
     --background-alt-color: var(--primary-light);
 
-    --link-color: var(--tertiary-light);
+    --link-color: var(--tertiary);
+    --link-active-color: var(--tertiary-light);
     --link-background: var(--secondary-dark);
-    --link-active-color: var(--tertiary-lighter);
     --link-active-background: var(--secondary);
 
     --border-color: var(--complement-light);
@@ -49,12 +49,17 @@
     --glass-shadow-color: var(--tertiary-darker);
 
     @media (prefers-color-scheme: dark) {
+        --standout-color: var(--tertiary);
+
         --font-color: var(--primary-lighter);
         --font-emph-color: var(--secondary-lighter);
         --background-color: hsl(from var(--complement-darker) h s 5%);
-        --background-special-color: hsl(from var(--background-color) h s 10%);
+        --background-special-color: hsl(from var(--complement-darker) h 40% 10%);
         --font-alt-color: var(--complement-dark);
         --background-alt-color: var(--primary);
+
+        --link-color: var(--tertiary-light);
+        --link-active-color: var(--tertiary-lighter);
 
         --shadow-color: hsl(from var(--complement-darker) h s 5%);
 
@@ -62,6 +67,8 @@
         --glass-border-color: hsl(from var(--glass-color) h s 40%);
         --glass-shadow-color: hsl(from var(--tertiary-darker) h s 5%);
     }
+
+    scrollbar-gutter: stable;
 }
 
 * {
@@ -86,6 +93,7 @@ body {
 
 main, .big-note {
     flex: 1;
+    inline-size: 100%;
     max-width: min(50rem, 100vw);
     margin: auto;
     padding-inline: 0.5em;
@@ -165,6 +173,9 @@ a {
     &[rel=external]::after {
         text-transform: none;
         content: url(/external-link.svg);
+        @media print {
+            content: "";
+        }
     }
     
     @media print {
@@ -206,7 +217,7 @@ nav {
         @media (max-width: 767px) {
             padding: 1em 0.5em;
         }
-    
+
         background-color: var(--link-background);
         border: 1px solid var(--link-background);
         text-transform: uppercase;
@@ -226,13 +237,15 @@ nav {
             }
         }
     
-        &:hover {
-            text-shadow: 0 0 0.1em var(--link-active-color);
+        &:link, &:visited {
+            color: var(--tertiary-light);
+        }
+        &:hover, &:active {
+            color: var(--tertiary-lighter);
             background-color: var(--link-active-background);
         }
-    
-        &:active {
-            text-shadow: 0 0 0.6em var(--link-active-color);
+        &:hover {
+            text-shadow: 0 0 0.1em var(--tertiary-lighter);
         }
     }
 
@@ -264,6 +277,7 @@ nav {
 
 .big-note {
     margin-block: 0.5em;
+    border-radius: 0.1em;
     padding: 1em;
     background-color: var(--background-alt-color);
     color: var(--font-alt-color);
@@ -334,28 +348,49 @@ kbd {
     font-family: "Fira Code", monospace;
 }
 code {
+    background-color: var(--background-special-color);
     font-size: 0.8em;
 
+    --comment-color: var(--complement-light);
+    --function-color: var(--complement);
+    --keyword-color: var(--secondary-light);
+    --string-color: var(--tertiary-dark);
+    @media (prefers-color-scheme: dark) {
+        --comment-color: var(--complement-lighter);
+        --function-color: var(--primary);
+        --keyword-color: var(--secondary-lighter);
+        --string-color: var(--tertiary-light);
+    }
+
     .comment {
-        color: var(--font-alt-color);
-        @media (prefers-color-scheme: dark) {
-            color: var(--font-alt-emph-color);
-        }
+        color: var(--comment-color);
+    }
+    .function {
+        color: var(--function-color);
+    }
+    .keyword {
+        color: var(--keyword-color);
+        font-weight: 500;
+    }
+    .string {
+        color: var(--string-color);
     }
 
     &[data-lang="sh"] {
-        padding: 0.2em;
-        background-color: var(--background-alt-color);
-        color: var(--font-alt-color);
-    
         &::before {
             font-style: normal;
-            color: var(--font-alt-emph-color);
+            color: var(--keyword-color);
             content: "$ ";
         }
     }
 }
-
+p > code {
+    padding: 0.2em;
+    font-weight: 500;
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(from var(--background-special-color) h 30% 15%);
+    }
+}
 
 /* Figures with images */
 
@@ -417,7 +452,7 @@ article > figure {
 .fine-print {
     max-width: min(50rem, 100vw);
     margin: auto;
-    color: var(--font-emph-color);
+    color: var(--font-color);
     text-align: center;
     font-size: small;
 }
@@ -455,13 +490,10 @@ div:has(> blockquote) {
     .quote-source {
         text-align: end;
 
-        &::after {
-            display: block;
-            width: 50%;
+        > * {
             margin-inline-start: auto;
             border-bottom-style: solid;
             border-color: var(--border-color);
-            content: "";
         }
     }
 }

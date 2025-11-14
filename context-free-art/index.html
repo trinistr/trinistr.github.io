@@ -46,15 +46,15 @@
 CF::Background = [alpha -1]
 <span class="comment">// Set the starting shape (required before version 3.4),
 // and set the desired color in HSB</span>
-startshape triangle [hue 227.9 saturation 0.5064 brightness 0.4608]
+<span class="keyword">startshape</span> triangle [hue 227.9 saturation 0.5064 brightness 0.4608]
 <span class="comment">// Define the shape rule</span>
-shape triangle {
+<span class="keyword">shape</span> triangle {
     ▲ [] <span class="comment">// Boring "TRIANGLE []" can be used, too</span>
     triangle [size 0.87 rotate 5 brightness -0.1] <span class="comment">// Recurse</span>
 }</code></pre>
                 </div>
                 <p>
-                    Now, by default <b>Context Free</b> adds some borders to the generated image. This makes sense, yes. However, this concrete file uses only a single unit-sized shaped at most (all primitives have a size of 1 unit), so borders would be gigantic. Not only that, but default positioning is also off, so cropping needs to be done. And, of course, we want a nice vector image to be served on the internet, so SVG makes more sense. So, let's generate the image with <code data-lang="sh"><kbd>cfdg --crop --bordersize=0 --svg triangle.cfdg triangle.svg</kbd></code> and see this beauty. <b>Context Free</b> on Windows and macOS probably have a graphical interface to do this. I wouldn't know.
+                    Now, by default <b>Context Free</b> adds some borders to the generated image. This makes sense, yes. However, this concrete file uses only a single unit-sized shaped at most (all primitives have a size of 1 unit), so borders would be gigantic. Not only that, but default positioning is also off, so cropping needs to be done. And, of course, we want a nice vector image to be served on the internet, so SVG makes more sense. So, let's generate the image with <code data-lang="sh"><kbd><span class="function">cfdg</span> --crop --bordersize=0 --svg triangle.cfdg triangle.svg</kbd></code> and see this beauty. <b>Context Free</b> on Windows and macOS probably have a graphical interface to do this. I wouldn't know.
                 </p>
                 <figure>
                     <img src="triangle.svg"
@@ -72,27 +72,27 @@ shape triangle {
                 </p>
                 <div class="file">
                     <span class="filename"><a href="garden.cfdg">garden.cfdg</a> (excerpts)</span>
-                    <pre><code data-lang="cfdg">shape GARDEN {
+                    <pre><code data-lang="cfdg"><span class="keyword">shape</span> GARDEN {
     <span class="comment">// Generate random number of plants at random positions</span>
-    loop 4…10 [x 1…5] {
+    <span class="keyword">loop</span> 4…10 [x 1…5] {
         GROUND [z -10]
-        transform [y -5…-3.5] {
+        <span class="keyword">transform</span> [y -5…-3.5] {
             PLANT []
         }
     }
 }
 ...
             <span class="comment">// Possible flower</span>
-            if (randint(3) == 0) {
+            <span class="keyword">if</span> (randint(3) == 0) {
                 FLOWER [y 1 z 1]
             }
 ...
-shape FLOWER
-rule 50% {
-    loop 6 [r 60] PETAL []
+<span class="keyword">shape</span> FLOWER
+<span class="keyword">rule</span> 50% {
+    <span class="keyword">loop</span> 6 [r 60] PETAL []
     CIRCLE [s 0.5 b 1 h 60 sat 0.3]
 }
-rule {
+<span class="keyword">rule</span> {
     <span class="comment">// Bud</span>
     CIRCLE [s 0.5 0.3 y -0.9 b 0.6 h 120 sat 0.5]
     PETAL [s 1.1 y -1]
@@ -123,7 +123,7 @@ rule {
                 </div>
                 <div class="big-note">
                     <p>
-                        It seems that since this article was written, <a href="https://www.contextfreeart.org">contextfreeart.org</a> went down and is no longer available. Sadly, this means that this gallery no longer works either.
+                        Since this article was written, <a href="https://www.contextfreeart.org">contextfreeart.org</a> went down for many days at least once. If the gallery doesn't work, well, try again later.
                     </p>
                 </div>
                 <div class="gallery">
