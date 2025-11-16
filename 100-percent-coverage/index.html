@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 100%: Why coverage doesn't matter and why it does — Locatio Terriblis</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
+        integrity="sha384-4aMEnBa9HzMLsDYaLm5wiA2ZoWDqNSB6pNnINMFUt13g9VOuTY5hZC49pzHzRXVs" crossorigin="anonymous">
+    <link rel="stylesheet" href="/main.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+    <nav class="backlink">
+        <a href="/">Back to 📒</a>
+    </nav>
+    <div class="page-wrapper">
+        <main aria-labelledby="header-title">
+            <h1 id="header-title">The 100%:<br>Why coverage doesn't matter and why it does</h1>
+            <p>
+                If you are a software developer, you are probably familiar with test coverage. It is a metric that shows the percentage of code that has been executed by tests. Often, it is used as a metric for the quality of the code, and maybe even as a goal for the team. However, as with many things in life, misunderstanding and misrepresenting it is kind of the norm. I'm going to attempt to illuminate how it can actually be used. And how it can't, too.
+            </p>
+            <p>
+                Be aware: this article is about the technical coverage metric resulting from executing tests in code base. Depending on setup, other kinds of automatic tests can generate this data, but usually it's harder to implement. Nonetheless, I trust the reader to be able to generalize these ideas.
+            </p>
+            <section aria-labelledby="header-coverage-calculation">
+                <h2 id="header-coverage-calculation">Coverage calculation</h2>
+                <p>
+                    Let's use a simple example to illustrate how coverage is calculated, starting with a very basic setup and gradually expanding it to increase coverage. I will be using Ruby for code purposes and the <a href="https://github.com/simplecov-ruby/simplecov" rel="external">SimpleCov</a> gem to measure coverage. It is easy to use and creates nice HTML reports.
+                </p>
+                <p>
+                    Let's say we have a <code>Bunny</code> which can <code>hop</code> a certain distance. Depending on distance and direction hops can be quite different. Maybe there is no hop at all, sometimes a bunny doesn't need to move! Put into words we can understand, this is it:
+                </p>
+<div class="file">
+<span class="filename"><a href="bunny.rb">bunny.rb</a></span>
+<pre><code data-lang="ruby"><span class="keyword">class</span> Bunny
+  <span class="keyword">def</span> <span class="function">hop</span>(distance)
+    <span class="keyword">return</span> <span class="string">"Lie down!"</span> <span class="keyword">if</span> distance<span class="function">.zero?</span>
+
+    <span class="comment"># Incrementally build the hop</span>
+    hop = String<span class="function">.new</span>
+    <span class="keyword">if</span> distance<span class="function">.positive?</span>
+      hop &lt;&lt; <span class="string">"Ready"</span>
+    <span class="keyword">else</span>
+      hop &lt;&lt; <span class="string">"Turn"</span>
+    <span class="keyword">end</span>
+    hop &lt;&lt; <span class="string">" and "</span>
+    <span class="keyword">if</span> distance<span class="function">.abs</span> > 1
+      hop &lt;&lt; <span class="string">"hippity-hop!"</span>
+    <span class="keyword">else</span>
+      hop &lt;&lt; <span class="string">"hop!"</span>
+    <span class="keyword">end</span>
+    hop
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre>
+</div>
+                <p>
+                    Alright, now we will begin testing hopping. For starters, we should probably just setup the test environment and load the code:
+                </p>
+<div class="file">
+<span class="filename"><a href="bunny_test.rb">bunny_test.rb</a> (1<sup>st</sup> version)</span>
+<pre><code data-lang="ruby"><span class="function">require</span> <span class="string">"simplecov"</span>
+<span class="function">require</span> <span class="string">"minitest/autorun"</span>
+
+SimpleCov<span class="function">.start</span>
+
+<span class="function">require_relative</span> <span class="string">"bunny"</span>
+</code></pre>
+</div>
+                <p>
+                    This "test" can be ran with <code data-lang="sh"><kbd><span class="function">ruby</span> bunny_test.rb</kbd></code>. You may be suprised, but even this already provides us with some line coverage. Why? Well, intuitively, defining a class and a method already does something, so it's logical that those statements are covered. Practically, Ruby's classes are fully dynamic, allowing class and method definitions at any point, so when the coverage says that those lines are covered, it's because they were <em>actually</em> executed.
+                </p>
+                <figure>
+                    <img src="coverage-v1.png" alt="Screenshot of a coverage report showing 2 lines covered and 11 lines missed" width="500">
+                    <figcaption>
+                        Coverage report before actually testing anything
+                    </figcaption>
+                </figure>
+                <p>
+                    But let us get to some hopping goodness. We will now begin actually testing the Bunny by gently prodding it forward, making it hop a little and a bit more:
+                </p>
+<div class="file">
+<span class="filename">bunny_test.rb (2<sup>nd</sup> version)</span>
+<pre><code data-lang="ruby"><span class="comment"># ...The previous content is omitted for brevity, but it's here</span>
+<span class="keyword">class</span> TestBunny < Minitest::Test
+  <span class="keyword">def</span> <span class="function">setup</span>
+    @bun = Bunny<span class="function">.new</span>
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">test_hop</span>
+    <span class="function">assert_equal</span> @bun<span class="function">.hop</span>(1), <span class="string">"Ready and hop!"</span>
+    <span class="function">assert_equal</span> @bun<span class="function">.hop</span>(2), <span class="string">"Ready and hippity-hop!"</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre>
+</div>
+                <p>
+                    And this is the report we get. Nice, only two assertions and the coverage is over 90.00%!
+                </p>
+                <figure>
+                    <img src="coverage-v2.png" alt="Screenshot of a coverage report showing 12 lines covered and 1 line missed" width="500">
+                    <figcaption>
+                        Coverage report after first test of the Bunny
+                    </figcaption>
+                </figure>
+                <p>
+                    It seems that we forgot to test backward hops. Let's just add this one neat test and we will be done: <code data-lang="ruby"><span class="function">assert_equal</span> @bun<span class="function">.hop</span>(-1), <span class="string">"Turn and hop!"</span></code>. Just look at these results!
+                </p>
+                <figure>
+                    <img src="coverage-v3.png" alt="Screenshot of a coverage report showing 100% line coverage" width="500">
+                    <figcaption>
+                        100% coverage report after testing backward hops
+                    </figcaption>
+                </figure>
+                <p>
+                    Excellent! Only three assertions and we have 100% coverage. I guess we are done here. Nothing more to test. Nothing more to think about. This bnuuy<!-- Send your pronunciation attempts as issues for this repository. --> is fully covered, snug and ready to sleep. If only we all were allowed to live like it, just three quick hops and the work day is over... But wait, how will the bun sleep if we never tested that it can lie down? How come it's covered if it never happened?
+                </p>
+                <p>
+                    And that's why branch coverage needs to be considered too. Even languages that don't have one-line conditionals often include the so called "ternary operator" from C, which is basically the same thing but badly named and hard to read between all the magic symbols. To rectify this terrible no-lying-down situation, let's enable branch coverage in SimpleCov:
+                </p>
+<div class="file">
+<span class="filename">bunny_test.rb (4<sup>th</sup> version)</span>
+<pre><code data-lang="ruby"><span class="comment"># ...</span>
+SimpleCov<span class="function">.start</span> <span class="keyword">do</span>
+  <span class="function">enable_coverage</span> <span class="string">:branch</span>
+<span class="keyword">end</span>
+<span class="comment"># ...</span>
+</code></pre>
+</div>
+                <figure>
+                    <img src="coverage-v4.png" alt="Screenshot of a coverage report showing 5 branches covered and 1 branch missed" width="500">
+                    <figcaption>
+                        Coverage report after enabling branch coverage
+                    </figcaption>
+                </figure>
+                <p>
+                    Oh no, red coloring! Now it's clear that the line with early return was executed several times but the return itself wasn't. At least all the other branches are covered, whew! Let's add one final test to make sure the return is executed: <code data-lang="ruby"><span class="function">assert_equal</span> @bun<span class="function">.hop</span>(0), <span class="string">"Lie down!"</span></code>. This ought to do it!
+                </p>
+                <figure>
+                    <img src="coverage-v5.png" alt="Screenshot of a coverage report showing 100% line and branch coverage" width="500">
+                    <figcaption>
+                        Coverage report after adding the final test
+                    </figcaption>
+                </figure>
+                <p>
+                    Gaze upon this beauty. Take it all in. 100% lines covered. 100% branches covered. Simply, perfection. Our work here is over. There is nowhere to go from here. It is done. We've achieved the holy grail of KPIs known as "the maximum value for the metric".
+                </p>
+                <p>
+                    ...
+                </p>
+                <p>
+                    ......
+                </p>
+                <p>
+                    .........
+                </p>
+                <p>
+                    Attentive readers will probably realise that this method has <em>5 possible results</em>, but there are only <em>4 assertions</em>; we never checked that the bunny can turn and do a hippity-hop in one go. We tested everything though, right? Where did that result disapper to? We <em>know</em> that it should exist, but our 100/100 coverage doesn't include it. What a mystery...
+                </p>
+            </section>
+            <section aria-labelledby="header-inherent-problem">
+                <h2 id="header-inherent-problem">The inherent problem with coverage</h2>
+                <p>
+                    Let's be real for a moment here, the problem is, of course, not with the coverage, it's working as advertised. The problem is with the tests. You may be tempted to think that there is no point in testing the last outcome, as it's obvious that it can happen. And in this case it is okay. But let's not forget: this is just a tiny simplified example, and the tests were done post-factum. In different circumstances tests should be significantly more thorough.
+                </p>
+                <p>
+                    Now, why does coverage not show that something isn't tested? KPI-brained managers probably think it should always be enough, but it's just not. In reality, possible result set depends on all possible paths through the execution graph of a piece of code, while coverage only depends on distinct nodes in that graph.
+                </p>
+                <p>
+                    By execution graph I mean a directed acyclic graph where nodes are separate linearly-executed pieces of code and edges connect these linear pieces according. In our example the execution graph can be derived as follows:
+                    <ul>
+                        <li>First line splits execution to immediate return and the rest of the method.</li>
+                        <li>Next condition creates two paths which converge in the middle of the method.</li>
+                        <li>There is one more condition splitting the execution into two paths which converge at the end.</li>
+                        <li>Finally, the last line is executed always.</li>
+                    </ul>
+                    Let's look at this graphically:
+                </p>
+                <figure>
+                    <img src="bunny.dot.svg" alt="Directed acyclic graph breaking down Bunny#hop method" width="500">
+                    <figcaption>
+                        Execution graph of the Bunny#hop method
+                    </figcaption>
+                </figure>
+                <p>
+                    From this graph, it's pretty clear what's happening: there are 5 possible execution paths, leading to 5 distinct results. (Tracing them is left as an exercise for the reader.) Coverage, on the other hand, only shows that nodes were visited. Not whence the execution came from. Just which nodes. You realise the problem now? <strong>Coverage, in general, cannot show that tests have achieved every possible result.</strong> There are exceptions to this, degenerate cases. I would say, two of them. Can you tell what they are? Graph above can be studied for an inspiration.
+                </p>
+                <p>
+                    To make sure that every one is on the same page: when several conditionals feed into each other, execution paths multiply. Like cockroaches, where there are conditionals, there are always even more, skulking in other methods. You may not know what that funky method you are calling does, but consider that it probably has ifs and elses of its own. Be wary of suddenly hitting <code>nil</code>s or errors. Always check for them... creating even more paths with ifs of your own. It's really a never-ending mill of code.
+                </p>
+                <p>
+                    Some among you may say "But, unknown article author on the internet, my code does a bunch of things to arrive at the same couple of results! I don't have a dozen distinct cases!" Of course, it's possible that in real code several paths result in the same thing. It's quite often that you need to find data in one of possible places, use different methods for calculation, etc. Still, each combination needs to be tested, otherwise how would you know that they do in fact behave the same? Are you sure that you covered all edge cases? Do you? Have you considered that one neat trick that doctors hate and users surely will do?
+                </p>
+                <p>
+                    So, we arrive at The Truth (patent pending):
+                </p>
+                <div>
+                    <blockquote>
+                        Coverage, be it line, branch or otherwise, can not show that your tests are complete and fool-proof. And KPI lovers should be ashamed of themselves.
+                    </blockquote>
+                    <div class="quote-source">
+                        <cite>Me, the author</cite>
+                    </div>
+                </div>
+            </section>
+            <section aria-labelledby="header-why-coverage-matters">
+                <h2 id="header-why-coverage-matters">Why coverage matters anyway</h2>
+                <p>
+                    After the previous soliloquy, you may have gotten the impression that I consider coverage unimportant and maybe even harmful. That is not the case at all. In fact, I usually consider 100% coverage to be a must. Why? Let's dive into it.
+                </p>
+                <p>
+                    First things first, let's make it clear: distinction between line and branch coverage is pretty much just a technical and historical artifact. They are both required to really see what's executed and what's not. Always enable maximum coverage options that your tool allows, unless there are limitations making that unviable for whatever reason.
+                </p>
+                <p>
+                    Now, back to the topic. Remember how we incrementally added tests for our lil' bunny? To do that, we used the coverage results to quickly identify what wasn't tested. And that's the crux of it: <strong>coverage helps quickly find definitely missing test cases</strong>. And that's pretty much it. Incomplete coverage means incomplete tests. This relationship can be represented as logical implication: <span class="codelike">incomplete&nbsp;coverage -> incomplete&nbsp;tests</span>.
+                </p>
+                <p>
+                    And this simple fact is why 100% coverage both doesn't matter and matters a lot. If it is below 100%, then that is an objective signal that test suite in question is incomplete, some code path is not exercised. Alternatively, some code path may be completely extraneous and dead. (Or, code has special cases that can't be executed in a single test run, such as platform-specific code.) In either case, it is a signal that something is wrong. On the other hand, if it is 100% already, then the only thing it tells you is that there is no strictly unreachable code. And that your tests at least cover some things, I guess.
+                </p>
+                <p>
+                    Furthermore, coverage is a safety net. If it decreases after a change, then something is clearly not being tested. Maybe there were no tests that covered buggy code (and that's why the change was needed). Maybe it's a new feature that has not test associated with it. Either way, decreasing coverage is also an objective signal that the test suite needs updates. There are even tools specifically for this, such as <a href="https://github.com/grodowski/undercover">undercover</a> gem, which raises a fuss when uncovered lines appear compared to the default branch.
+                </p>
+            </section>
+            <section aria-labelledby="header-the-end">
+                <h2 id="header-the-end">The end</h2>
+                <p>
+                    And here we are. We utterly covered the coverage. We even learned some things today!
+                    <ul>
+                        <li>Coverage counts execution nodes, not paths.</li>
+                        <li>Coverage can't <em>really</em> be used as a metric for test quality.</li>
+                        <li>Less than 100% coverage is an objective signal that test suite is lacking.</li>
+                        <li>100% coverage doesn't mean that test suite <em>isn't</em> lacking.</li>
+                        <li>Think with you head, not your KPI.</li>
+                    </ul>
+                </p>
+            </section>
+        </main>
+        <footer>
+            <div class="fine-print">
+                © 2025 Alexander Bulancov.
+                Original content, unless otherwise specified, is licensed under
+                <span class="license"><a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license">CC BY-NC 4.0</a>.</span>
+            </div>
+        </footer>
+    </div>
+</body>

@@ -61,7 +61,7 @@
         --link-color: var(--tertiary-light);
         --link-active-color: var(--tertiary-lighter);
 
-        --shadow-color: hsl(from var(--complement-darker) h s 5%);
+        --shadow-color: hsl(from var(--complement-darker) h s 45%);
 
         --glass-color: var(--tertiary);
         --glass-border-color: hsl(from var(--glass-color) h s 40%);
@@ -132,6 +132,12 @@ p {
 hr {
     border-style: none;
     border-block-start: 0.1em ridge var(--font-color);
+}
+
+ul, ol {
+    margin-block-start: 0.2em;
+    margin-block-end: 0;
+    padding-inline-start: 2em;
 }
 
 a {
@@ -297,12 +303,11 @@ nav {
     margin-block: 0.5em;
     margin-inline-end: auto;
     border-inline-start: 0.5em solid var(--border-standout-color);
-    padding-inline-start: 1em;
     background-color: var(--background-alt-color);
-    font-family: "Linux Libertine";
     
     .filename {
         display: inline-block;
+        padding-inline-start: 1em;
         font-size: smaller;
         color: var(--font-alt-color);
 
@@ -313,27 +318,11 @@ nav {
             }
         }
     }
-    .file-language {
-        display: inline-block;
-        font-size: smaller;
-        font-style: italic;
-        color: var(--font-alt-color);
-    }
-    .filename + .file-language::before {
-        display: inline-block;
-        position: relative;
-        top: calc((1cap - 1ex) / 2);
-        margin-inline-start: 0.5em;
-        margin-inline-end: 0.2em;
-        font-size: larger;
-        font-style: normal;
-        content: "⌑";
-    }
 }
 
 pre {
     margin-block: 0.2em;
-    margin-inline-start: -1em;
+    /* margin-inline-start: -1em; */
     padding-block: 0.2em;
     padding-inline-start: 1em;
     background-color: var(--background-special-color);
@@ -390,6 +379,11 @@ p > code {
     @media (prefers-color-scheme: dark) {
         background-color: hsl(from var(--background-special-color) h 30% 15%);
     }
+}
+.codelike {
+    background-color: var(--background-special-color);
+    font-family: "Fira Code", monospace;
+    font-size: 0.8em;
 }
 
 /* Figures with images */
@@ -467,13 +461,11 @@ nav a .fine-print {
 
 div:has(> blockquote) {
     margin-block: 0.5em;
-    margin-inline: 1em;
-    border-left-style: ridge;
-    border-left-width: 0.4em;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
+    margin-inline: 0.75em;
+    border-left-style: double;
+    border-left-width: 0.5em;
     border-color: var(--border-color);
-    padding: 0.5em 1em;
+    padding: 0.5em 0.75em;
 
     &:has(> .quote-source) {
         padding-block-end: 0;

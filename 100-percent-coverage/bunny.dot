@@ -1,0 +1,35 @@
+digraph {
+  bgcolor="#fff0cc"
+  node [style=filled color="#081b68" fontcolor="#ffe29d"]
+  edge [color="#3a52b1" fontcolor="#ffe29d"]
+
+  ifdz [label="if distance.zero?"]
+  ifdp [label="if distance.positive?"]
+  ifdl [label="if distance.abs > 1"]
+  retlie [label="return 'Lie down!'" shape="box"]
+  rethop [label="return hop" shape="box"]
+  start [label="hop = String.new" shape="box"]
+  ready [label="hop << 'Ready'" shape="box"]
+  turn [label="hop << 'Turn'" shape="box"]
+  and [label="hop << ' and '" shape="box"]
+  hippity [label="hop << 'hippity-hop!'" shape="box"]
+  hop [label="hop << 'hop!'" shape="box"]
+  endlie [label="" shape="point"]
+  endhop [label="" shape="point"]
+
+  subgraph cluster_line_1 {
+    color="#081b68"
+    ifdz -> retlie
+  }
+  retlie -> endlie
+  ifdz -> start
+  start -> ifdp
+  ifdp -> ready
+  ifdp -> turn
+  {ready turn} -> and
+  and -> ifdl
+  ifdl -> hippity
+  ifdl -> hop
+  {hippity hop} -> rethop
+  rethop -> endhop
+}
