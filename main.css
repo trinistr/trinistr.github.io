@@ -140,6 +140,10 @@ ul, ol {
     padding-inline-start: 2em;
 }
 
+:is(ul, ol) > :is(ul, ol) {
+    margin-inline-start: 1em;
+}
+
 a {
     transition:
         color 0.2s ease-in-out,

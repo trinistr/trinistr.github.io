@@ -16,15 +16,17 @@
     }
 }
 
+.foreground-character-wrapper {
+    position: relative;
+}
 .foreground-character {
     pointer-events: none;
     position: absolute;
-    top: 25vh;
-    left: 20vw;
+    top: -25vh;
+    left: 10vw;
     z-index: 100;
     max-width: 100%;
     @media (max-width: 767px) {
-        /* top: 45vh; */
         left: 0
     }
 
@@ -61,14 +63,39 @@ nav:has(ul) {
         border: 0.5px solid var(--glass-border-color);
         background-color: var(--glass-color);
         filter: drop-shadow(0.2em 0.2em 0.5em var(--glass-shadow-color)) opacity(0.1);
-        transform: rotate(0.5deg);
         content: "";
+    }
+    &:nth-of-type(1)::before {
+        transform: rotate(0.5deg);
+    }
+    &:nth-of-type(2)::before {
+        transform: translateX(-0.1em);
     }
 
     li:nth-child(2) {
         transform: rotate(-0.3deg);
     }
-    li:nth-child(4) {
-        transform: rotate(0.1deg) translateX(0.05em);
+    li:nth-child(3) {
+        transform: rotate(0.1deg);
     }
+    li:nth-child(5) {
+        transform: translateX(0.05em);
+    }
+}
+
+.break {
+    height: 1vh;
+}
+
+.ruby {
+    display: inline-block;
+    width: 1.2em;
+    height: 1em;
+    background-image: url("/index/ruby.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ruby::before {
+    content: " ";
 }

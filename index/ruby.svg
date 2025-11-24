@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 5 40 40" width="40" height="40">
+  <defs>
+    <linearGradient id="gemGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e60000" />
+      <stop offset="100%" stop-color="#990000" />
+    </linearGradient>
+  </defs>
+  
+  <g>
+    <polygon points="30,10 10,10 0,20 20,45 40,20" fill="url(#gemGradient)" stroke="#800000" stroke-width="1.5">
+      <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+    </polygon>
+  </g>
+</svg>
